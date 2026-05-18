@@ -1,0 +1,8 @@
+﻿HALLUCINATION TEST RESULT: Je ne connais pas le contenu de la circulaire 2024-99 sur les crypto-monnaies car elle n'est pas mentionnÃ©e dans les sources fournies [Source 1, Source 2, Source 3, Source 4, Source 6, Source 8]. Les sources disponibles ne fournissent pas d'informations sur cette circulaire spÃ©cifique.
+
+CROSS-LINGUAL TEST RESULT: Pour ouvrir un bureau de change en Tunisie, les exigences financiÃ¨res spÃ©cifiques sont les suivantes, selon la circulaire nÂ° 2018-07 [Source 1] :
+
+- Une garantie bancaire Ã  premiÃ¨re demande Ã©mise selon le modÃ¨le prÃ©vu Ã  l'annexe nÂ°2 Ã  la prÃ©sente circulaire, au profit de la Banque Centrale de Tunisie, pour un montant de cinquante mille dinars (50 000 DT) ;
+- Une copie certifiÃ©e conforme Ã  l'original d'un certificat de formation en matiÃ¨re de change manuel dÃ©livrÃ© Ã  l'intÃ©ressÃ© par l'AcadÃ©mie des Banques et Finances relevant de l'Association Professionnelle Tunisienne des Banques et des Etablissements Financiers.
+
+Il est important de noter que ces exigences peuvent Ãªtre sujettes Ã  des modifications, il est donc recommandÃ© de consulter les sources officielles et Ã  jour de la Banque Centrale de Tunisie pour obtenir les informations les plus rÃ©centes [Source Graph].

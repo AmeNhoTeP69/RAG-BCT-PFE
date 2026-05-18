@@ -1,0 +1,45 @@
+# BCT RAG Pipeline — Python dependencies
+# Install all: pip install -r requirements.txt
+
+# ── Step 1: PDF extraction ────────────────────────────────────────────────────
+pymupdf>=1.24.0              # fitz — fast, accurate PDF text extraction
+pytesseract>=0.3.10           # Tesseract OCR wrapper
+pdf2image>=1.17.0            # PDF to image conversion for OCR
+langdetect>=1.0.9            # Language detection (Ar/Fr)
+
+# ── Step 2: Chunking ─────────────────────────────────────────────────────────
+# (no extra deps beyond stdlib)
+
+# ── Step 3: Embeddings ───────────────────────────────────────────────────────
+sentence-transformers>=2.7.0  # SentenceTransformer models
+torch>=2.0.0                  # backend for sentence-transformers
+
+# ── Step 4: Vector DB ────────────────────────────────────────────────────────
+faiss-cpu>=1.8.0              # use faiss-gpu if CUDA is available
+
+# ── Step 6: Graph RAG ────────────────────────────────────────────────────────
+networkx>=3.2                 # in-memory graph (no server required)
+spacy>=3.7.0                  # NER for entity extraction (French model below)
+# After installing spacy, run:
+#   python -m spacy download fr_core_news_lg
+#   python -m spacy download xx_sent_ud_sm  # Multilingual model for Arabic support
+
+# ── Step 7: Analysis & EDA ───────────────────────────────────────────────────
+matplotlib>=3.8.0             # Charts and plots
+seaborn>=0.13.0               # Statistical visualizations
+pandas>=2.1.0                 # Data manipulation
+nltk>=3.8.0                   # Traditional NLP (stopwords, etc)
+gensim>=4.3.0                 # Word2Vec, LDA topic modeling (step 6)
+
+# ── Step 7: Hybrid ML Optimization ──────────────────────────────────────────
+scikit-learn>=1.4.0           # TF-IDF, train_test_split, metrics
+imbalanced-learn>=0.12.0      # SMOTE oversampling for class imbalance
+
+# ── Utilities ────────────────────────────────────────────────────────────────
+tqdm>=4.66.0                  # progress bars
+numpy>=1.26.0
+termcolor>=2.4.0              # CLI colors for demo
+requests>=2.31.0              # API calls for LLM components
+fastapi>=0.110.0              # Web API framework
+uvicorn>=0.28.0               # ASGI server
+jinja2>=3.1.3                 # Template rendering

@@ -1,0 +1,61 @@
+[
+  {
+    "test": "Fact Retrieval (Simple)",
+    "query": "Qu'est-ce qu'une circulaire de la BCT ?",
+    "rag_answer": "Une circulaire de la BCT est un document émis par la Banque Centrale de Tunisie (BCT) qui contient des instructions, des règles ou des lignes directrices pour les établissements financiers, les banques ou d'autres entités réglementées. Ces circulaires peuvent porter sur divers sujets tels que la réglementation des opérations bancaires, les exigences de capital, les normes de sécurité, les procédures de déclaration, etc.\n\nCependant, dans le contexte fourni, il n'y a pas d'information spécifique sur les circulaires de la BCT. La source fournie (Note 2022-05) mentionne une plateforme technique et des manuels cités en annexe III et IV, mais ne définit pas explicitement ce qu'est une circulaire de la BCT.\n\nRéférence : Note 2022-05, Article 7 : Plateforme technique.",
+    "rag_sources": [
+      "Note 2022 05 fr (ARTICLE 7 : PLATEFORME TECHNIQUE)"
+    ],
+    "graph_answer": "Une circulaire de la Banque Centrale de Tunisie (BCT) est un document réglementaire émis par la BCT pour préciser les règles et les procédures à suivre par les banques et les établissements financiers tunisiens. Ces circulaires peuvent porter sur divers sujets tels que les conditions de banque, les modalités d'octroi de crédits, les règles de contrôle interne pour la gestion du risque de blanchiment d'argent et de financement du terrorisme, etc. [Source 7 : CB 2017 08 FR Préambule] et [Source 9 : Cir202204fr Préambule]. Elles sont généralement émises par le Gouverneur de la BCT et sont destinées à assurer la stabilité et la sécurité du système financier tunisien. [Source 2 : Cir 2016 07 fr Article premier].",
+    "graph_sources": [
+      "Cir 2021 03 fr",
+      "Cir 2016 01 fr",
+      "Cir 2024 02 fr",
+      "Cir 2016 07 fr",
+      "Cir 2016 02 fr",
+      "Note 2022 08 fr",
+      "CB 2017 08 FR",
+      "Cir202204fr"
+    ]
+  },
+  {
+    "test": "Structural/Relationship",
+    "query": "Quels sont les textes liés à la circulaire 2017-08 ?",
+    "rag_answer": "Désolé, mais la circulaire 2017-08 n'est pas mentionnée dans les documents fournis. La seule circulaire mentionnée est la circulaire n° 2016-01 du 08/02/2016, qui abroge notamment la circulaire n° 2001-11 du 4 mai 2001 relative au marché des changes et instruments de couverture des risques de change et de taux (Source : Cir 2016 01 fr Article 74). \n\nL'information sur la circulaire 2017-08 n'est pas disponible dans les documents fournis.",
+    "rag_sources": [
+      "Cir 2016 01 fr (Article 74 : Sont abrogées toutes dispositions contraires ou faisant double emploi avec la (part 2))"
+    ],
+    "graph_answer": "Erreur: Limite de taux dépassée après plusieurs tentatives.",
+    "graph_sources": [
+      "Cir202204fr",
+      "Cir 2021 05 fr",
+      "Cir 2016 01 fr",
+      "Cir 2024 02 fr",
+      "Cir 2025 08 fr",
+      "Cir 2016 07 fr",
+      "CB 2017 08 FR",
+      "Cir 2020 10 fr"
+    ]
+  },
+  {
+    "test": "Topic/Categorization",
+    "query": "Quelles sont les obligations en matière de lutte contre le blanchiment ?",
+    "rag_answer": "Selon la circulaire CB 2017-08 FR, Article 19, les établissements assujettis ont les obligations suivantes en matière de lutte contre le blanchiment d'argent et le financement du terrorisme lorsqu'ils traitent avec des personnes physiques et morales de pays signalés par le GAFI comme pays qui n'appliquent pas ou appliquent d'une manière insuffisante les normes internationales en matière de lutte contre le blanchiment d'argent et le financement du terrorisme :\n\n1. Procéder à la déclaration de soupçon systématique des opérations financières.\n2. S'abstenir d'ouvrir des filiales, des succursales ou des bureaux de représentation dans ces pays.\n3. Limiter les relations d'affaires ou les opérations financières avec les pays identifiés et les personnes dans ces pays.\n4. S'interdire de recourir à des tiers établis dans le pays concerné pour exercer certains éléments du processus de vigilance relative à la clientèle.\n\nCes obligations sont mentionnées dans la circulaire CB 2017-08 FR, Article 19, et sont destinées à appliquer des contre-mesures proportionnées aux risques liés au blanchiment d'argent et au financement du terrorisme. (Source : CB 2017-08 FR)",
+    "rag_sources": [
+      "CB 2017 08 FR (Article 19 :)"
+    ],
+    "graph_error": "('Connection aborted.', ConnectionResetError(10054, 'Une connexion existante a dû être fermée par l’hôte distant', None, 10054, None))"
+  },
+  {
+    "test": "Arabic Support",
+    "query": "ماهي شروط فتح مكتب صرف في تونس؟",
+    "rag_error": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/query (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée\"))",
+    "graph_error": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/query (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée\"))"
+  },
+  {
+    "test": "Out of Scope (Safety)",
+    "query": "Comment préparer un tajine tunisien ?",
+    "rag_error": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/query (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée\"))",
+    "graph_error": "('Connection aborted.', ConnectionResetError(10054, 'Une connexion existante a dû être fermée par l’hôte distant', None, 10054, None))"
+  }
+]
