@@ -59,8 +59,11 @@ def generate_eda():
         # Clean years (remove None)
         years = df['year'].dropna().astype(int).sort_values()
         sns.countplot(x=years, palette="magma")
-        plt.title("Évolution du nombre de publications par année")
+        plt.title("Yearly Evolution of BCT Regulatory Publications")
+        plt.xlabel("Year")
+        plt.ylabel("Number of Publications")
         plt.xticks(rotation=45)
+        plt.tight_layout()
         plt.savefig(OUTPUT_DIR / "yearly_evolution.png")
         print("Saved yearly_evolution.png")
 

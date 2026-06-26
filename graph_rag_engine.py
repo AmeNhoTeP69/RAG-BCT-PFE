@@ -39,6 +39,21 @@ import requests
 import networkx as nx
 import spacy
 
+
+def _extract_ref_key(text: str) -> str:
+    """Normalize a document reference or title to a YYYY-NN key for matching.
+
+    Handles formats such as:
+      "circulaire 2017-08"  →  "2017-08"
+      "Cir 2017 08 FR"      →  "2017-08"
+      "CB_2017_08_FR"       →  "2017-08"
+    Returns empty string if no year-number pattern is found.
+    """
+    m = re.search(r"(\d{4})[\s\-_]+(\d{2,3})", text.lower())
+    if m:
+        return f"{m.group(1)}-{m.group(2).zfill(2)}"
+    return ""
+
 import config
 from utils.connectivity import check_internet
 from rag_engine import RAGEngine
@@ -153,9 +168,13 @@ class HybridGraphRAGEngine(RAGEngine):
         log.info(f"Reformulating query ({'Groq' if self.online else 'Ollama'})...")
         prompt = (
             "Tu es un expert en réglementation bancaire tunisienne.\n"
-            "Reformule la question suivante en une question précise et formelle.\n"
-            "IMPORTANT : Si la question est en ARABE, la reformulation doit rester en ARABE.\n"
-            "Réponds UNIQUEMENT avec la question reformulée, sans explication.\n\n"
+            "Reformule la question suivante en une question précise et formelle pour la recherche documentaire.\n"
+            "RÈGLES :\n"
+            "1. Développe les acronymes BCT (ex: LCB-FT → lutte contre le blanchiment de capitaux et le financement du terrorisme, "
+            "IAB → intermédiaires agréés en bourse, RTGS → règlement brut en temps réel).\n"
+            "2. Si la question est en ARABE, traduis-la en FRANÇAIS pour optimiser la recherche documentaire "
+            "(la réponse finale sera fournie en arabe — seule la reformulation doit être en français).\n"
+            "3. Réponds UNIQUEMENT avec la question reformulée, sans explication.\n\n"
             f"Question originale: {query}\n\n"
             "Question reformulée:"
         )
@@ -181,10 +200,14 @@ class HybridGraphRAGEngine(RAGEngine):
         # Fallback to Ollama for reformulation
         try:
             log.info("Attempting reformulation with Local Ollama...")
-            return self._call_ollama(prompt)
+            result = self._call_ollama(prompt)
+            if not result.startswith("Error"):
+                return result
         except Exception as e:
             log.warning(f"Ollama reformulation failed: {e}")
-            return query
+
+        log.warning("Both Groq and Ollama unavailable for reformulation. Using original query.")
+        return query
 
     # ── Stage 2: Word2Vec Query Expansion ─────────────────────────────────────
 
@@ -203,22 +226,23 @@ class HybridGraphRAGEngine(RAGEngine):
         expansion_terms = set()
 
         for token in tokens:
-            if len(token) < 3:
+            if len(token) < 5:  # skip short function words (les, des, sont, etc.)
                 continue
             try:
                 similar = self.w2v_model.wv.most_similar(
                     token, topn=config.W2V_QUERY_EXPANSION_TOPN
                 )
                 for word, score in similar:
-                    if score > 0.65:  # Similarity threshold to avoid noise
+                    if score > 0.95:  # High threshold — W2V on small corpus inflates all scores
                         expansion_terms.add(word)
             except KeyError:
                 pass  # Token not in W2V vocabulary
 
         if expansion_terms:
-            expansion_str = " ".join(expansion_terms)
-            expanded = f"{query} {expansion_str}"
-            log.info(f"Query expanded with W2V terms: {expansion_terms}")
+            # Cap total expansion to 5 terms to avoid diluting the query embedding
+            capped = list(expansion_terms)[:5]
+            expanded = f"{query} {' '.join(capped)}"
+            log.info(f"Query expanded with W2V terms: {capped}")
             return expanded
 
         return query
@@ -353,16 +377,26 @@ class HybridGraphRAGEngine(RAGEngine):
         already_seen_titles = set(sources)
         graph_chunks_added = 0
 
+        # Pre-compute normalized keys for CITES reference nodes (e.g. "circulaire 2017-08" → "2017-08")
+        # and a plain set for direct doc_id matches (entity/topic traversal returns real bct_XXXX ids)
+        rel_ids_lower = {r.lower() for r in all_related_ids}
+        rel_ref_keys = {_extract_ref_key(r) for r in all_related_ids} - {""}
+
         if all_related_ids and self.chunks:
             for chunk in self.chunks:
                 doc_id = chunk.get("metadata", {}).get("doc_id", "")
                 title = chunk.get("metadata", {}).get("title", "")
+                filename = chunk.get("metadata", {}).get("filename", "")
 
-                is_related = any(
-                    rel_id.lower() in doc_id.lower() or
-                    rel_id.lower() in title.lower() or
-                    doc_id.lower() in rel_id.lower()
-                    for rel_id in all_related_ids
+                title_key = _extract_ref_key(title)
+                file_key = _extract_ref_key(filename)
+
+                is_related = (
+                    # Direct bct_id match — entity traversal and topic traversal return real ids
+                    doc_id.lower() in rel_ids_lower
+                    # Normalized year-number match — CITES reference nodes
+                    or bool(title_key and title_key in rel_ref_keys)
+                    or bool(file_key and file_key in rel_ref_keys)
                 )
 
                 if is_related and title not in already_seen_titles:
@@ -374,7 +408,7 @@ class HybridGraphRAGEngine(RAGEngine):
                     sources.append(title)
                     already_seen_titles.add(title)
                     graph_chunks_added += 1
-                    if graph_chunks_added >= 3:
+                    if graph_chunks_added >= 1:
                         break
 
         if graph_chunks_added == 0 and all_related_ids:
@@ -429,10 +463,22 @@ YOUR RESPONSE:"""
                 "pipeline": "greeting",
             }
 
-        # ── Stage 1: Query Reformulation ──────────────────────────────
+        # ── Stage 1: Off-topic guard on the raw user query ────────────────────
+        # Must run BEFORE reformulation: Groq may rephrase off-topic questions
+        # into BCT-sounding ones, inflating the score and bypassing the guard.
+        quick_check = self.search(query, 3)
+        if len(quick_check) == 1 and quick_check[0]["score"] < 0.50:
+            log.info(f"Off-topic guard triggered (score={quick_check[0]['score']:.4f}). Refusing.")
+            return {
+                "answer": "Désolé, je ne peux répondre qu'aux questions relatives à la réglementation de la Banque Centrale de Tunisie.",
+                "sources": [],
+                "pipeline": "off_topic_guard",
+            }
+
+        # ── Stage 2: Query Reformulation ──────────────────────────────────────
         reformulated_query = self.reformulate_query(query)
 
-        # ── Stage 2: Word2Vec Query Expansion ─────────────────────────────────
+        # ── Stage 3: Word2Vec Query Expansion ─────────────────────────────────
         expanded_query = self.expand_query_with_w2v(reformulated_query)
 
         # ── Stage 3a: Dense Vector Retrieval (expanded query) ─────────────────

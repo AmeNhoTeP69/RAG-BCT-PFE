@@ -130,7 +130,8 @@ class RAGEngine:
         payload = {
             "model": config.OPENAI_MODEL,
             "messages": [{"role": "user", "content": prompt}],
-            "temperature": config.LLM_TEMPERATURE
+            "temperature": config.LLM_TEMPERATURE,
+            "max_tokens": 2000
         }
 
         max_retries = 3
@@ -138,9 +139,12 @@ class RAGEngine:
             try:
                 response = requests.post(url, headers=headers, json=payload, timeout=15)
                 if response.status_code == 200:
-                    return response.json()['choices'][0]['message']['content']
+                    import re
+                    content = response.json()['choices'][0]['message']['content']
+                    content = re.sub(r'<think>.*?</think>', '', content, flags=re.DOTALL).strip()
+                    return content
                 elif response.status_code == 429:
-                    wait_time = (attempt + 1) * 5
+                    wait_time = 20 + attempt * 20  # 20s, 40s, 60s
                     log.warning(f"Rate limit hit (429). Waiting {wait_time}s before retry {attempt+1}/{max_retries}...")
                     time.sleep(wait_time)
                 else:
@@ -222,15 +226,24 @@ RÉPONSE :"""
 
     def query(self, query: str, k: int = config.TOP_K_CHUNKS):
         log.info(f"Querying: {query}")
-        
+
         # Fast path for greetings
         if self.is_simple_greeting(query):
             return {
                 "answer": "Bonjour! Je suis votre assistant expert pour la réglementation de la Banque Centrale de Tunisie. Comment puis-je vous aider aujourd'hui?",
                 "sources": []
             }
-            
+
         retrieved = self.search(query, k)
+
+        # Off-topic hard guard: only 1 fallback result AND below the relevance threshold → unrelated to BCT
+        if len(retrieved) == 1 and retrieved[0]["score"] < 0.50:
+            log.info(f"Off-topic guard triggered (score={retrieved[0]['score']:.4f}). Refusing.")
+            return {
+                "answer": "Désolé, je ne peux répondre qu'aux questions relatives à la réglementation de la Banque Centrale de Tunisie.",
+                "sources": []
+            }
+
         result = self.generate_answer(query, retrieved)
         return result
 
