@@ -367,7 +367,7 @@ class HybridGraphRAGEngine(RAGEngine):
 
             context_text += (
                 f"\n--- Source {i+1} [{category}] : {title} {header} "
-                f"(score={score:.3f}) ---\n{chunk['text']}\n"
+                f"(score={score:.3f}) ---\n{chunk['text'][:config.MAX_CONTEXT_CHUNK_CHARS]}\n"
             )
             sources.append(title)
 
@@ -403,7 +403,7 @@ class HybridGraphRAGEngine(RAGEngine):
                     header = chunk.get("metadata", {}).get("section_header", "")
                     context_text += (
                         f"\n--- [GRAPH] Source {len(sources)+graph_chunks_added+1} : "
-                        f"{title} {header} ---\n{chunk['text']}\n"
+                        f"{title} {header} ---\n{chunk['text'][:config.MAX_CONTEXT_CHUNK_CHARS]}\n"
                     )
                     sources.append(title)
                     already_seen_titles.add(title)
@@ -427,12 +427,36 @@ class HybridGraphRAGEngine(RAGEngine):
             ", ".join(list(related_ids)[:10]) if related_ids else "Aucune relation trouvée."
         )
 
+        history_text = self._format_history(kwargs.get("history"))
+        history_block = (
+            f"\nCONVERSATION HISTORY (use it to resolve follow-up references like "
+            f"'the second point' or 'that case'):\n{history_text}\n"
+            if history_text else ""
+        )
+        notes = kwargs.get("notes")
+        notes_block = ""
+        if notes:
+            joined = "\n".join(f"- {n}" for n in notes)
+            notes_block = (
+                "\nVERIFIED NOTES (factual corrections validated by the administrator). "
+                "They are RELIABLE: apply them when relevant, even if they are not in the "
+                f"CONTEXT:\n{joined}\n"
+            )
+
         return f"""ROLE: You are an expert on Central Bank of Tunisia (BCT) regulations.
 - Use the provided context (VECTOR SEARCH and GRAPH) to answer precisely.
 - LANGUAGE RULE: You MUST respond in the SAME language as the user's question (Arabic, French, or English).
 - CITATION: Use specific document titles (e.g., [Circular 2017-08]) directly in your response instead of generic tags like [Source X].
 - SAFETY: If the answer is not in the context, say you don't know. Do not hallucinate.
-
+- CONTINUITY: Use the CONVERSATION HISTORY (when provided) to understand follow-up questions and implicit references, but always ground the answer in the CONTEXT.
+- DISCUSSION & SELF-CORRECTION: You are in a real conversation. The user may comment on, challenge or correct your previous answer, rephrase or correct their own question, or ask you to go deeper or change direction. Handle it as follows:
+  • If they point out a mistake or omission, RE-READ the CONTEXT and HISTORY carefully before replying.
+    – If the CONTEXT proves the user RIGHT → acknowledge the error explicitly (e.g. "You're right, …"), correct yourself, explain what changes, and quote the exact passage.
+    – If the CONTEXT CONTRADICTS the user → do NOT concede just to be agreeable; politely point out the discrepancy and cite the document that proves it. The user can be wrong.
+    – If the CONTEXT cannot settle it → say so honestly; do not guess.
+  • Change your answer ONLY when documentary evidence justifies it — never merely because the user insists.
+  • You may discuss and reason around BCT circulars and notes, but always separate what comes from the CONTEXT from your own reasoning, and stay within the BCT regulatory domain.
+{notes_block}{history_block}
 CONTEXT PROVIDED:
 {context_text}
 
@@ -447,30 +471,33 @@ YOUR RESPONSE:"""
 
     # ── Main Query Method ─────────────────────────────────────────────────────
 
-    def query(self, query: str, k: int = config.TOP_K_CHUNKS) -> dict:
+    def query(self, query: str, k: int = config.TOP_K_CHUNKS, history=None, notes=None) -> dict:
         log.info(f"{'='*60}")
         log.info(f"Hybrid Graph RAG Query: {query}")
         log.info(f"{'='*60}")
 
-        # Fast path for greetings
-        if self.is_simple_greeting(query):
+        # Fast path for greetings — only on the first turn (no history).
+        if not history and self.is_simple_greeting(query):
             return {
                 "answer": (
-                    "Bonjour ! Je suis votre assistant expert pour la réglementation "
-                    "de la Banque Centrale de Tunisie. Comment puis-je vous aider ?"
+                    "Hello! I'm your expert assistant for Central Bank of Tunisia (BCT) "
+                    "regulations. How can I help you today?"
                 ),
                 "sources": [],
                 "pipeline": "greeting",
             }
 
-        # ── Stage 1: Off-topic guard on the raw user query ────────────────────
+        # ── Stage 1: Off-topic guard ──────────────────────────────────────────
         # Must run BEFORE reformulation: Groq may rephrase off-topic questions
         # into BCT-sounding ones, inflating the score and bypassing the guard.
-        quick_check = self.search(query, 3)
+        # Fold conversation context in first, so legitimate follow-ups are not
+        # mistaken for off-topic questions.
+        guard_query = self._contextualize_query(query, history)
+        quick_check = self.search(guard_query, 3)
         if len(quick_check) == 1 and quick_check[0]["score"] < 0.50:
             log.info(f"Off-topic guard triggered (score={quick_check[0]['score']:.4f}). Refusing.")
             return {
-                "answer": "Désolé, je ne peux répondre qu'aux questions relatives à la réglementation de la Banque Centrale de Tunisie.",
+                "answer": "Sorry, I can only answer questions about Central Bank of Tunisia (BCT) regulations.",
                 "sources": [],
                 "pipeline": "off_topic_guard",
             }
@@ -481,15 +508,20 @@ YOUR RESPONSE:"""
         # ── Stage 3: Word2Vec Query Expansion ─────────────────────────────────
         expanded_query = self.expand_query_with_w2v(reformulated_query)
 
-        # ── Stage 3a: Dense Vector Retrieval (expanded query) ─────────────────
-        vector_results = self.search(expanded_query, k)
+        # Context-aware variants: fold prior user turns into the strings used for
+        # dense retrieval and graph traversal so follow-ups resolve correctly.
+        retrieval_query = self._contextualize_query(expanded_query, history)
+        context_query = self._contextualize_query(reformulated_query, history)
+
+        # ── Stage 3a: Dense Vector Retrieval (expanded + contextualized) ──────
+        vector_results = self.search(retrieval_query, k)
         log.info(f"Vector retrieval: {len(vector_results)} chunks found.")
 
         # ── Stage 3b: Graph Retrieval (entities + citations) ──────────────────
         all_related_ids = set()
 
         # Entity-based graph traversal
-        query_entities = self.find_entities_in_query(reformulated_query)
+        query_entities = self.find_entities_in_query(context_query)
         for ent_node in query_entities:
             for doc_id, _, data in self.G.in_edges(ent_node, data=True) if self.G else []:
                 if data.get("relation") == "MENTIONS":
@@ -501,7 +533,7 @@ YOUR RESPONSE:"""
             all_related_ids.update(self.get_citation_neighbors(doc_id))
 
         # ── Stage 3c: Topic-Based Graph Retrieval (LDA) ───────────────────────
-        topic_related_docs = self.get_topic_related_docs(reformulated_query)
+        topic_related_docs = self.get_topic_related_docs(context_query)
         all_related_ids.update(topic_related_docs)
 
         log.info(
@@ -513,8 +545,8 @@ YOUR RESPONSE:"""
         context_text, sources = self._build_context(vector_results, all_related_ids)
 
         # ── Stage 5: LLM Answer Generation ────────────────────────────────────
-        # Pass related_ids to parent generate_answer which will use our overridden _build_prompt
-        result = self.generate_answer(query, vector_results, related_ids=all_related_ids)
+        # Pass related_ids + history to parent generate_answer which will use our overridden _build_prompt
+        result = self.generate_answer(query, vector_results, related_ids=all_related_ids, history=history, notes=notes)
         
         # Merge graph-specific metadata
         result.update({

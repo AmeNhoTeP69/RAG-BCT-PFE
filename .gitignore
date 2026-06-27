@@ -167,6 +167,14 @@ bct_documents/
 data/
 plots/
 
+# App runtime artifacts (auth + persistence)
+bct_app.db*
+.auth_secret
+static/assets/*.bak
+eval_*.log
+*.checkpoint
+*.checkpoint.json
+
 # Node (frontend)
 node_modules/
 dist/

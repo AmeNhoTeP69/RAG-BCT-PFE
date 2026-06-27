@@ -1,0 +1,1378 @@
+{
+  "mode": "graph",
+  "timestamp": "2026-06-27T13:56:44",
+  "batch_size": 20,
+  "batches_run": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "total": 80,
+  "passed": 67,
+  "errors": 0,
+  "accuracy": 0.8375,
+  "by_expected_behavior": {
+    "answer": {
+      "passed": 53,
+      "total": 64,
+      "accuracy": 0.8281
+    },
+    "not_found": {
+      "passed": 7,
+      "total": 8,
+      "accuracy": 0.875
+    },
+    "refuse": {
+      "passed": 7,
+      "total": 8,
+      "accuracy": 0.875
+    }
+  },
+  "by_category": {
+    "absent": {
+      "passed": 7,
+      "total": 8,
+      "accuracy": 0.875
+    },
+    "aml_kyc": {
+      "passed": 7,
+      "total": 8,
+      "accuracy": 0.875
+    },
+    "credit_financing": {
+      "passed": 5,
+      "total": 8,
+      "accuracy": 0.625
+    },
+    "forex_change": {
+      "passed": 8,
+      "total": 8,
+      "accuracy": 1.0
+    },
+    "governance": {
+      "passed": 6,
+      "total": 8,
+      "accuracy": 0.75
+    },
+    "intermediaries": {
+      "passed": 5,
+      "total": 8,
+      "accuracy": 0.625
+    },
+    "monetary_policy": {
+      "passed": 7,
+      "total": 8,
+      "accuracy": 0.875
+    },
+    "off_topic": {
+      "passed": 7,
+      "total": 8,
+      "accuracy": 0.875
+    },
+    "payments": {
+      "passed": 8,
+      "total": 8,
+      "accuracy": 1.0
+    },
+    "specific_circulaires": {
+      "passed": 7,
+      "total": 8,
+      "accuracy": 0.875
+    }
+  },
+  "by_language": {
+    "ar": {
+      "passed": 6,
+      "total": 8,
+      "accuracy": 0.75
+    },
+    "en": {
+      "passed": 2,
+      "total": 2,
+      "accuracy": 1.0
+    },
+    "fr": {
+      "passed": 59,
+      "total": 70,
+      "accuracy": 0.8429
+    }
+  },
+  "by_difficulty": {
+    "easy": {
+      "passed": 14,
+      "total": 15,
+      "accuracy": 0.9333
+    },
+    "hard": {
+      "passed": 22,
+      "total": 27,
+      "accuracy": 0.8148
+    },
+    "medium": {
+      "passed": 31,
+      "total": 38,
+      "accuracy": 0.8158
+    }
+  },
+  "results": [
+    {
+      "id": "EVAL_001",
+      "question": "Quelles sont les exigences en matière de LCB-FT pour les banques tunisiennes ?",
+      "language": "fr",
+      "category": "aml_kyc",
+      "difficulty": "easy",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 3.47,
+      "answer_excerpt": "Les exigences en matière de lutte contre le blanchiment d'argent (LCB) et le financement du terrorisme (FT) pour les banques tunisiennes sont définies par plusieurs circulaires de la Banque Centrale d",
+      "sources": [
+        "Cir 2025 17 fr",
+        "Cir 2018 09 fr",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_002",
+      "question": "Quelles sont les règles de gouvernance des banques en Tunisie ?",
+      "language": "fr",
+      "category": "governance",
+      "difficulty": "easy",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.56,
+      "answer_excerpt": "Les règles de gouvernance des banques en Tunisie sont principalement encadrées par la **circulaire 2021-05** de la Banque Centrale de Tunisie (BCT), intitulée *« Cadre de gouvernance des banques et de",
+      "sources": [
+        "Cir 2025 01 fr",
+        "Cir 2025 07 fr",
+        "Cir 2018 06 fr"
+      ]
+    },
+    {
+      "id": "EVAL_003",
+      "question": "Quelles sont les conditions pour ouvrir un bureau de change ?",
+      "language": "fr",
+      "category": "forex_change",
+      "difficulty": "easy",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 63.57,
+      "answer_excerpt": "لفتح مكتب تبادل العملة في تونس، يجب على الشخص الطبيعي التونسي المقيم الامتثال للشروط التالية وفقًا لـ **[Circular 2018-07]**:\n\n1. **تقديم طلب مكتوب** إلى المقر الرئيسي للبنك المركزي التونسي (BCT) وفق ",
+      "sources": [
+        "Cir 2018 07 fr",
+        "Cir 2018 07 fr",
+        "Cir 2025 12 fr"
+      ]
+    },
+    {
+      "id": "EVAL_004",
+      "question": "Quels sont les participants au système RTGS Elyssa ?",
+      "language": "fr",
+      "category": "payments",
+      "difficulty": "easy",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.12,
+      "answer_excerpt": "Les participants au système Elyssa-RTGS sont les suivants, conformément aux dispositions de la **Note 2022-05** de la Banque Centrale de Tunisie (BCT) :  \n\n1. **Participants directs et indirects** :  ",
+      "sources": [
+        "Note 2022 05 fr",
+        "Note 2022 05 fr",
+        "Note 2022 05 fr"
+      ]
+    },
+    {
+      "id": "EVAL_005",
+      "question": "Comment financer une PME selon la réglementation de la BCT ?",
+      "language": "fr",
+      "category": "credit_financing",
+      "difficulty": "easy",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 24.33,
+      "answer_excerpt": "لتمويل الشركات الصغيرة والمتوسطة (PME) وفقًا للوائح البنك المركزي التونسي (BCT)، يُمكن الاعتماد على الآليات التالية المذكورة في الوثائق الرسمية:\n\n1. **القروض المدعومة عبر اتفاقيات دولية**:  \n   - وفقً",
+      "sources": [
+        "Note 2024 163 fr",
+        "Note 2023 29 fr",
+        "Cir 2020 04 fr"
+      ]
+    },
+    {
+      "id": "EVAL_006",
+      "question": "Quels sont les instruments de politique monétaire de la BCT ?",
+      "language": "fr",
+      "category": "monetary_policy",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 63.42,
+      "answer_excerpt": "Les instruments de politique monétaire de la Banque Centrale de Tunisie (BCT) sont détaillés dans la **circulaire 2017-02**, notamment à l’article 3 et au tableau 1. Voici les catégories principales e",
+      "sources": [
+        "Cir 2017 02 fr",
+        "Cir 2020 10 fr",
+        "Cir 2017 02 fr"
+      ]
+    },
+    {
+      "id": "EVAL_007",
+      "question": "Quelles sont les obligations de la circulaire 2017-08 ?",
+      "language": "fr",
+      "category": "specific_circulaires",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 3.11,
+      "answer_excerpt": "La circulaire **2017-08** de la Banque Centrale de Tunisie (BCT), intitulée *« Règles de contrôle interne pour la gestion du risque de blanchiment d'argent et de financement du terrorisme »*, impose a",
+      "sources": [
+        "Cir 2025 17 fr",
+        "CB 2017 08 FR",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_008",
+      "question": "Quelles sont les obligations de reporting des intermédiaires agréés ?",
+      "language": "fr",
+      "category": "intermediaries",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 64.07,
+      "answer_excerpt": "Les intermédiaires agréés (banques et établissements financiers) ont des obligations de reporting spécifiques en matière de lutte contre le blanchiment d'argent et le financement du terrorisme, confor",
+      "sources": [
+        "Cir 2025 17 fr",
+        "CB 2017 08 FR",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_009",
+      "question": "Comment préparer un couscous tunisien traditionnel ?",
+      "language": "fr",
+      "category": "off_topic",
+      "difficulty": "easy",
+      "expected_behavior": "refuse",
+      "status": "PASS",
+      "response_time_s": 0.07,
+      "answer_excerpt": "Sorry, I can only answer questions about Central Bank of Tunisia (BCT) regulations.",
+      "sources": []
+    },
+    {
+      "id": "EVAL_010",
+      "question": "Quelles sont les dispositions de la circulaire 1985-03 ?",
+      "language": "fr",
+      "category": "absent",
+      "difficulty": "medium",
+      "expected_behavior": "not_found",
+      "status": "PASS",
+      "response_time_s": 1.91,
+      "answer_excerpt": "I don't have access to the provisions of Circular 1985-03 in the provided context. The available documents only reference circulars from 2006, 2017, 2018, 2025, and 2026. You may need to consult older",
+      "sources": [
+        "Cir 2025 17 fr",
+        "Cir 2018 09 fr",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_011",
+      "question": "Quelles sont les obligations de vigilance à l'égard de la clientèle (KYC) ?",
+      "language": "fr",
+      "category": "aml_kyc",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 3.37,
+      "answer_excerpt": "Les obligations de vigilance à l'égard de la clientèle (KYC) imposées par la Banque Centrale de Tunisie (BCT) sont détaillées dans plusieurs circulaires, notamment :  \n\n1. **Mesures renforcées pour le",
+      "sources": [
+        "Cir 2025 06 fr",
+        "CB 2017 08 FR",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_012",
+      "question": "Quelles sont les exigences en matière d'adéquation des fonds propres ?",
+      "language": "fr",
+      "category": "governance",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.04,
+      "answer_excerpt": "Les exigences en matière d'adéquation des fonds propres sont définies dans la **circulaire n°2018-06** (article 50, 51 et 52), qui établit les normes prudentielles applicables aux banques et établisse",
+      "sources": [
+        "Cir 2026 03 fr",
+        "Cir 2018 06 fr",
+        "Cir 2023 05 fr"
+      ]
+    },
+    {
+      "id": "EVAL_013",
+      "question": "Quelles sont les obligations des intermédiaires agréés en devises ?",
+      "language": "fr",
+      "category": "forex_change",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.61,
+      "answer_excerpt": "Les intermédiaires agréés en devises (Intermédiaires Agréés) ont plusieurs obligations réglementaires définies par la Banque Centrale de Tunisie (BCT), notamment :  \n\n1. **Respect des cours de change ",
+      "sources": [
+        "Cir 2021 03 fr",
+        "Cir 2025 03 fr",
+        "Cir 2016 01 fr"
+      ]
+    },
+    {
+      "id": "EVAL_014",
+      "question": "Comment fonctionne le système de paiement de gros montants en Tunisie ?",
+      "language": "fr",
+      "category": "payments",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 64.37,
+      "answer_excerpt": "Le système de paiement de gros montants en Tunisie est géré par le système **Elyssa-RTGS** (Real-Time Gross Settlement), mis en place par la Banque Centrale de Tunisie (BCT) pour moderniser les infras",
+      "sources": [
+        "Note 2022 05 fr",
+        "Note 2022 05 fr",
+        "Note 2022 05 fr"
+      ]
+    },
+    {
+      "id": "EVAL_015",
+      "question": "Quelles sont les conditions de refinancement des crédits accordés aux PME ?",
+      "language": "fr",
+      "category": "credit_financing",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 3.04,
+      "answer_excerpt": "Les conditions de refinancement des crédits accordés aux PME, conformément à la **Note 2023-29**, sont les suivantes :  \n\n1. **Devise et remboursement** :  \n   - Les crédits PME sont libellés et rembo",
+      "sources": [
+        "Note 2024 163 fr",
+        "Note 2023 29 fr",
+        "Note 2023 29 fr"
+      ]
+    },
+    {
+      "id": "EVAL_016",
+      "question": "Comment fonctionne l'appel d'offres de refinancement de la BCT ?",
+      "language": "fr",
+      "category": "monetary_policy",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 24.1,
+      "answer_excerpt": "L'appel d'offres de refinancement de la Banque Centrale de Tunisie (BCT) fonctionne selon les modalités suivantes, conformément aux dispositions des circulaires **[Circular 2017-02]** et **[Circular 2",
+      "sources": [
+        "Cir 2017 02 fr",
+        "Cir 2017 02 fr",
+        "Cir 2017 02 fr"
+      ]
+    },
+    {
+      "id": "EVAL_017",
+      "question": "Quel est l'objet de la circulaire BCT 2016-06 ?",
+      "language": "fr",
+      "category": "specific_circulaires",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 22.53,
+      "answer_excerpt": "Je n'ai pas d'information sur l'objet de la circulaire BCT 2016-06 dans le contexte fourni. Les sources disponibles ne mentionnent pas cette circulaire spécifique.",
+      "sources": [
+        "Cir 2025 17 fr",
+        "CB 2017 08 FR",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_018",
+      "question": "Quelles opérations courantes les intermédiaires agréés peuvent-ils exécuter ?",
+      "language": "fr",
+      "category": "intermediaries",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "FAIL",
+      "response_time_s": 22.58,
+      "answer_excerpt": "I don't have access to specific information about the current operations that licensed intermediaries can execute, as this is not explicitly detailed in the provided context. The documents focus on an",
+      "sources": [
+        "CB 2017 08 FR",
+        "CB 2017 08 FR",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_019",
+      "question": "Qui a gagné la dernière Coupe du monde de la FIFA ?",
+      "language": "fr",
+      "category": "off_topic",
+      "difficulty": "easy",
+      "expected_behavior": "refuse",
+      "status": "PASS",
+      "response_time_s": 0.1,
+      "answer_excerpt": "Sorry, I can only answer questions about Central Bank of Tunisia (BCT) regulations.",
+      "sources": []
+    },
+    {
+      "id": "EVAL_020",
+      "question": "Quelles sont les règles de la BCT sur les crypto-monnaies et le bitcoin ?",
+      "language": "fr",
+      "category": "absent",
+      "difficulty": "medium",
+      "expected_behavior": "not_found",
+      "status": "PASS",
+      "response_time_s": 23.03,
+      "answer_excerpt": "La Banque Centrale de Tunisie (BCT) n'a pas émis, dans les documents fournis, de règles spécifiques sur les crypto-monnaies ou le bitcoin. Les textes mentionnés portent sur la lutte contre le blanchim",
+      "sources": [
+        "CB 2017 08 FR",
+        "Note 2022 05 fr",
+        "Cir 2017 02 fr"
+      ]
+    },
+    {
+      "id": "EVAL_021",
+      "question": "Comment les banques doivent-elles déclarer les opérations suspectes à la CTAF ?",
+      "language": "fr",
+      "category": "aml_kyc",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "FAIL",
+      "response_time_s": 23.19,
+      "answer_excerpt": "La question posée concerne la procédure de déclaration des opérations suspectes à la Commission Tunisienne des Analyses Financières (CTAF). Cependant, **aucun document du contexte fourni ne précise ex",
+      "sources": [
+        "CB 2017 08 FR",
+        "Cir 2018 09 fr",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_022",
+      "question": "Quel est le rôle du conseil d'administration dans la gouvernance bancaire ?",
+      "language": "fr",
+      "category": "governance",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.9,
+      "answer_excerpt": "Le rôle du conseil d'administration dans la gouvernance bancaire, tel que défini par la **circulaire 2021-05** de la Banque Centrale de Tunisie (BCT), inclut les responsabilités suivantes :  \n\n1. **Di",
+      "sources": [
+        "Cir 2021 01 fr",
+        "Cir 2023 05 fr",
+        "Cir 2018 06 fr"
+      ]
+    },
+    {
+      "id": "EVAL_023",
+      "question": "Quelles sont les règles applicables aux opérations de change manuel ?",
+      "language": "fr",
+      "category": "forex_change",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.79,
+      "answer_excerpt": "Les règles applicables aux opérations de change manuel en Tunisie sont principalement encadrées par les circulaires suivantes :  \n\n1. **Circular 2018-07** et **Circular 2019-07** :  \n   - Ces textes r",
+      "sources": [
+        "Cir 2018 07 fr",
+        "Cir 2019 07 fr",
+        "Cir 2016 01 fr"
+      ]
+    },
+    {
+      "id": "EVAL_024",
+      "question": "Quelles sont les règles applicables au système de télécompensation ?",
+      "language": "fr",
+      "category": "payments",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 22.84,
+      "answer_excerpt": "Les documents fournis ne mentionnent pas explicitement les règles applicables au système de télécompensation. Les circulaires disponibles (2017-08, 2025-17, 2018-09, 2024-02) portent principalement su",
+      "sources": [
+        "Cir 2024 02 fr",
+        "CB 2017 08 FR",
+        "Cir 2025 17 fr"
+      ]
+    },
+    {
+      "id": "EVAL_025",
+      "question": "Quelles sont les règles relatives à la classification des créances ?",
+      "language": "fr",
+      "category": "credit_financing",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.72,
+      "answer_excerpt": "Les règles relatives à la classification des créances, notamment les créances non performantes, sont régies par plusieurs circulaires de la Banque Centrale de Tunisie (BCT). Voici les documents pertin",
+      "sources": [
+        "Cir 2022 01 fr",
+        "Cir 2021 01 fr",
+        "Cir 2025 01 fr"
+      ]
+    },
+    {
+      "id": "EVAL_026",
+      "question": "Quelles sont les règles relatives à la réserve obligatoire des banques ?",
+      "language": "fr",
+      "category": "monetary_policy",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 22.54,
+      "answer_excerpt": "القواعد المتعلقة بالاحتياطات الإلزامية للبنوك تُحدد في **الدورية 2017-02**، وخاصة في **العنوان الرابع**.  \n\n- **المادة 48**: يجب على البنوك إرسال إعلان عن الاحتياطات الإلزامية إلى **البنك المركزي التو",
+      "sources": [
+        "Cir 2016 07 fr",
+        "Cir 2025 01 fr",
+        "Cir 2017 02 fr"
+      ]
+    },
+    {
+      "id": "EVAL_027",
+      "question": "Quels sont les liens entre la loi 2016-48 et les circulaires de la BCT ?",
+      "language": "fr",
+      "category": "specific_circulaires",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.84,
+      "answer_excerpt": "القانون 2016-48 (الذي يحدد وضعية البنوك والمؤسسات المالية) يُعتبر أحد النصوص القانونية الأساسية التي تستند إليها الدوائر الصادرة عن البنك المركزي التونسي (BCT) لتنظيم مكافحة غسل الأموال وتمويل الإرهاب",
+      "sources": [
+        "Cir 2025 17 fr",
+        "CB 2017 08 FR",
+        "Cir 2018 09 fr"
+      ]
+    },
+    {
+      "id": "EVAL_028",
+      "question": "Quelles sont les règles applicables aux comptes étrangers en dinars convertibles ?",
+      "language": "fr",
+      "category": "intermediaries",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "FAIL",
+      "response_time_s": 63.12,
+      "answer_excerpt": "I don't have access to specific information on rules applicable to foreign accounts in convertible dinars within the provided context. The documents cited (Circulars 2025-17, 2026-02, 2021-09, 2022-12",
+      "sources": [
+        "Cir 2022 12 fr",
+        "Cir 2021 09 fr",
+        "Cir 2025 17 fr"
+      ]
+    },
+    {
+      "id": "EVAL_029",
+      "question": "Quelle est la météo prévue demain à Tunis ?",
+      "language": "fr",
+      "category": "off_topic",
+      "difficulty": "easy",
+      "expected_behavior": "refuse",
+      "status": "FAIL",
+      "response_time_s": 2.68,
+      "answer_excerpt": "Je n'ai pas accès aux données en temps réel, y compris aux prévisions météorologiques. De plus, les documents fournis concernent uniquement les réglementations bancaires de la Banque Centrale de Tunis",
+      "sources": [
+        "Cir 2021 05 fr",
+        "Cir 2017 12 fr",
+        "Note 2024 178 ar"
+      ]
+    },
+    {
+      "id": "EVAL_030",
+      "question": "Quel est le montant exact minimum du capital pour créer une banque en dinars ?",
+      "language": "fr",
+      "category": "absent",
+      "difficulty": "hard",
+      "expected_behavior": "not_found",
+      "status": "PASS",
+      "response_time_s": 22.59,
+      "answer_excerpt": "I don't have access to the exact minimum capital requirement for establishing a bank in Tunisian dinars within the provided documents. The context includes regulations on reporting obligations, debit ",
+      "sources": [
+        "Note 2023 29 fr",
+        "Cir 2025 10 fr",
+        "Note 2021 16 fr"
+      ]
+    },
+    {
+      "id": "EVAL_031",
+      "question": "Quelles sont les obligations de lutte contre le financement du terrorisme ?",
+      "language": "fr",
+      "category": "aml_kyc",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 24.39,
+      "answer_excerpt": "Les obligations de lutte contre le financement du terrorisme imposées aux banques et établissements financiers en Tunisie, selon les textes de la Banque Centrale de Tunisie (BCT), incluent les points ",
+      "sources": [
+        "Cir 2025 17 fr",
+        "Cir 2018 09 fr",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_032",
+      "question": "Quelles sont les missions du comité d'audit d'une banque ?",
+      "language": "fr",
+      "category": "governance",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.29,
+      "answer_excerpt": "missions du comité d'audit d'une banque, conformément à l'article 38 de la circulaire 2021-05 de la Banque Centrale de Tunisie (BCT), sont les suivantes :  \n\n1. **Assurer la qualité des informations f",
+      "sources": [
+        "Cir 2021 05 fr",
+        "Cir 2017 06 fr",
+        "Cir 2022 08 fr"
+      ]
+    },
+    {
+      "id": "EVAL_033",
+      "question": "Comment s'effectue le rapatriement des recettes d'exportation ?",
+      "language": "fr",
+      "category": "forex_change",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 63.61,
+      "answer_excerpt": "Le rapatriement des recettes d'exportation en Tunisie est réglementé par la **circulaire aux intermédiaires agréés n°2025-13** (publiée le 27 octobre 2025), intitulée *« Règlement financier des import",
+      "sources": [
+        "Cir 2022 12 fr",
+        "Cir 2019 02 fr",
+        "Cir 2025 12 fr"
+      ]
+    },
+    {
+      "id": "EVAL_034",
+      "question": "Quelles sont les obligations relatives au traitement des chèques sans provision ?",
+      "language": "fr",
+      "category": "payments",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.52,
+      "answer_excerpt": "Les obligations relatives au traitement des chèques sans provision, conformément à la **circulaire BCT n° 2024-14**, sont les suivantes :  \n\n1. **Interdiction de délivrer des chèques en blanc sous int",
+      "sources": [
+        "Note 2024 129 fr",
+        "Cir 2024 14 fr",
+        "Cir 2024 14 fr"
+      ]
+    },
+    {
+      "id": "EVAL_035",
+      "question": "Quelles sont les obligations de provisionnement des créances classées ?",
+      "language": "fr",
+      "category": "credit_financing",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "FAIL",
+      "response_time_s": 2.14,
+      "answer_excerpt": "I don't have access to specific information about \"obligations de provisionnement des créances classées\" in the provided context. The documents cited (Cir 2022-01, Cir 2016-07, Cir 2018-12, Cir 2024-0",
+      "sources": [
+        "Cir 2018 12 fr",
+        "Cir 2022 01 fr",
+        "Cir 2024 05 fr"
+      ]
+    },
+    {
+      "id": "EVAL_036",
+      "question": "Quelles garanties sont éligibles aux opérations de politique monétaire ?",
+      "language": "fr",
+      "category": "monetary_policy",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 22.86,
+      "answer_excerpt": "Les garanties éligibles aux opérations de politique monétaire de la Banque Centrale de Tunisie (BCT) sont les suivantes :  \n\n1. **Actifs négociables** :  \n   - Des actifs négociables répondant aux cri",
+      "sources": [
+        "Cir 2018 08 fr",
+        "Cir 2018 12 fr",
+        "Cir 2017 02 fr"
+      ]
+    },
+    {
+      "id": "EVAL_037",
+      "question": "Que prévoit la loi bancaire 2016-48 relative aux banques et établissements financiers ?",
+      "language": "fr",
+      "category": "specific_circulaires",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.15,
+      "answer_excerpt": "القانون رقم 2016-48 المؤرخ في 11 جويلية 2016 يحدد الإطار التنظيمي للبنوك والمؤسسات المالية في تونس، ويغطي مجالات متعددة منها:  \n1. **مكافحة غسل الأموال وتمويل الإرهاب** (كما ورد في [Circular 2017-08]،",
+      "sources": [
+        "Cir 2018 16 fr",
+        "Cir 2020 01 fr",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_038",
+      "question": "Quelles sont les obligations en matière de position de change des banques ?",
+      "language": "fr",
+      "category": "intermediaries",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "FAIL",
+      "response_time_s": 22.55,
+      "answer_excerpt": "I don't have access to specific information on foreign exchange position obligations in the provided context. The available sources focus on interest rate regulations (TRE) and capital adequacy norms,",
+      "sources": [
+        "Cir 2018 06 fr",
+        "Cir 2026 01 fr",
+        "Cir 2025 07 fr"
+      ]
+    },
+    {
+      "id": "EVAL_039",
+      "question": "Donne-moi une recette de pâtisserie au miel.",
+      "language": "fr",
+      "category": "off_topic",
+      "difficulty": "easy",
+      "expected_behavior": "refuse",
+      "status": "PASS",
+      "response_time_s": 0.08,
+      "answer_excerpt": "Sorry, I can only answer questions about Central Bank of Tunisia (BCT) regulations.",
+      "sources": []
+    },
+    {
+      "id": "EVAL_040",
+      "question": "Que prévoit la circulaire 1990-07 sur les agences bancaires ?",
+      "language": "fr",
+      "category": "absent",
+      "difficulty": "medium",
+      "expected_behavior": "not_found",
+      "status": "PASS",
+      "response_time_s": 1.97,
+      "answer_excerpt": "I don't have access to the content of Circular 1990-07 in the provided context. The available documents focus on Islamic banking regulations (e.g., [Circular 2019-08], [Circular 2021-05]) and do not m",
+      "sources": [
+        "Cir 2021 05 fr",
+        "Cir 2018 06 fr",
+        "Cir 2019 08 fr"
+      ]
+    },
+    {
+      "id": "EVAL_041",
+      "question": "Quelles mesures de vigilance renforcée s'appliquent aux personnes politiquement exposées ?",
+      "language": "fr",
+      "category": "aml_kyc",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 2.51,
+      "answer_excerpt": "Les mesures de vigilance renforcée applicables aux personnes politiquement exposées (PEP) sont détaillées à l'article 14 de la **Cir 2026 02 fr**. Conformément à ce texte, le changeur manuel doit :  \n",
+      "sources": [
+        "Cir 2026 02 fr",
+        "Cir 2021 05 fr",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_042",
+      "question": "Quelles sont les exigences relatives au système de contrôle interne ?",
+      "language": "fr",
+      "category": "governance",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.97,
+      "answer_excerpt": "تتعلق متطلبات النظام الداخلي للرقابة بحسب ما ورد في الوثائق التالية:\n\n1. **تقرير التقييم الداخلي** (CB 2017-08، المقال 60):  \n   - يجب على المؤسسات المالية تضمين تقريرها السنوي المقدم إلى البنك المركز",
+      "sources": [
+        "Cir 2025 03 fr",
+        "CB 2017 08 FR",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_043",
+      "question": "Quelles sont les conditions d'ouverture d'un compte en devises ?",
+      "language": "fr",
+      "category": "forex_change",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 64.25,
+      "answer_excerpt": "Les conditions d'ouverture d'un compte en devises dépendent du type d'entité concernée. Pour les **startups**, la circulaire **Cir 2019-01** précise que l'ouverture d'un compte en devises est autorisé",
+      "sources": [
+        "Cir 2021 09 fr",
+        "Cir 2019 01 fr",
+        "Cir 2025 12 fr"
+      ]
+    },
+    {
+      "id": "EVAL_044",
+      "question": "Quel est le cadre de surveillance des systèmes de paiement par la BCT ?",
+      "language": "fr",
+      "category": "payments",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 3.31,
+      "answer_excerpt": "Le cadre de surveillance des systèmes de paiement par la Banque Centrale de Tunisie (BCT) est défini par plusieurs dispositions réglementaires, notamment :  \n\n1. **Cadre légal et mission** : La BCT ex",
+      "sources": [
+        "Cir 2020 11 fr",
+        "Note 2022 05 fr",
+        "Cir 2024 05 fr"
+      ]
+    },
+    {
+      "id": "EVAL_045",
+      "question": "Quel est le cadre des lignes de crédit extérieures pour le financement ?",
+      "language": "fr",
+      "category": "credit_financing",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "FAIL",
+      "response_time_s": 22.62,
+      "answer_excerpt": "I don't have access to specific information about the framework for external credit lines for financing in the provided context. The documents referenced focus on internal control measures, anti-money",
+      "sources": [
+        "Cir 2025 17 fr",
+        "CB 2017 08 FR",
+        "Cir 2025 01 fr"
+      ]
+    },
+    {
+      "id": "EVAL_046",
+      "question": "Quel est le rôle du taux directeur dans la politique monétaire ?",
+      "language": "fr",
+      "category": "monetary_policy",
+      "difficulty": "easy",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.0,
+      "answer_excerpt": "الدور الرئيسي للسعر المرجعي (التوجيهي) في السياسة النقدية هو توجيه سعر الفائدة بين البنوك يومياً إلى مستويات قريبة من هذا السعر، وفقاً لـ **[Circular 2017-02]**. يُعتبر هذا الإطار التشغيلي أداة لتحقيق",
+      "sources": [
+        "Cir 2017 02 fr",
+        "Cir 2020 10 fr",
+        "Cir 2018 08 fr"
+      ]
+    },
+    {
+      "id": "EVAL_047",
+      "question": "Quelles dispositions introduit la circulaire 2018-06 ?",
+      "language": "fr",
+      "category": "specific_circulaires",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 22.48,
+      "answer_excerpt": "Je n'ai pas d'informations disponibles sur la circulaire 2018-06 dans le contexte fourni. Les sources mentionnées concernent les circulaires 2017-08, 2025-17 et 2026-02, ainsi que d'autres textes juri",
+      "sources": [
+        "Cir 2025 17 fr",
+        "CB 2017 08 FR",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_048",
+      "question": "ما هي التزامات التصريح للوسطاء المعتمدين؟",
+      "language": "ar",
+      "category": "intermediaries",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.12,
+      "answer_excerpt": "الالتزامات المتعلقة بالتصريح للوسطاء المعتمدين لم يتم توضيحها بشكل مباشر في السياق المقدم. المراجع المتوفرة (كالمذكرة عدد 01 لسنة 2022 والمراسيم الأخرى) تركز على تحديث قوائم الوسطاء المعتمدين ومؤسسات ",
+      "sources": [
+        "Note 2022 01 ar",
+        "Cir 2021 05 fr",
+        "Cir 2022 02 fr"
+      ]
+    },
+    {
+      "id": "EVAL_049",
+      "question": "Quels sont les meilleurs films à voir cette année ?",
+      "language": "fr",
+      "category": "off_topic",
+      "difficulty": "easy",
+      "expected_behavior": "refuse",
+      "status": "PASS",
+      "response_time_s": 0.08,
+      "answer_excerpt": "Sorry, I can only answer questions about Central Bank of Tunisia (BCT) regulations.",
+      "sources": []
+    },
+    {
+      "id": "EVAL_050",
+      "question": "Quel est le taux directeur exact fixé par la BCT en janvier 2099 ?",
+      "language": "fr",
+      "category": "absent",
+      "difficulty": "hard",
+      "expected_behavior": "not_found",
+      "status": "PASS",
+      "response_time_s": 22.2,
+      "answer_excerpt": "I don't have access to information about the benchmark interest rate set by the Central Bank of Tunisia (BCT) in January 2099, as this date is far beyond the scope of the provided context, which only ",
+      "sources": [
+        "Cir 2020 17 fr",
+        "Cir 2021 02 fr",
+        "Cir 2025 02 fr"
+      ]
+    },
+    {
+      "id": "EVAL_051",
+      "question": "Quelles sont les obligations d'identification du bénéficiaire effectif ?",
+      "language": "fr",
+      "category": "aml_kyc",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 22.66,
+      "answer_excerpt": "La question de l'identification du bénéficiaire effectif n'est pas explicitement traitée dans les documents fournis (Circular 2017-08 et Circular 2025-17). Ces textes se concentrent principalement sur",
+      "sources": [
+        "Cir 2025 17 fr",
+        "CB 2017 08 FR",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_052",
+      "question": "Quelles sont les règles d'incompatibilité pour les dirigeants de banques ?",
+      "language": "fr",
+      "category": "governance",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "FAIL",
+      "response_time_s": 22.98,
+      "answer_excerpt": "I don't have access to specific information about incompatibility rules for bank directors in the provided context. The available documents focus on risk management, governance frameworks, dividend di",
+      "sources": [
+        "Cir 2022 02 fr",
+        "Cir 2025 02 fr",
+        "Cir 2024 01 fr"
+      ]
+    },
+    {
+      "id": "EVAL_053",
+      "question": "Quelles sont les obligations de déclaration des transferts en devises ?",
+      "language": "fr",
+      "category": "forex_change",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 63.68,
+      "answer_excerpt": "Les obligations de déclaration des transferts en devises sont principalement réglementées par la **circulaire n°2018-14** de la Banque Centrale de Tunisie (BCT), qui fixe les procédures et modalités d",
+      "sources": [
+        "Cir 2025 17 fr",
+        "Cir 2021 09 fr",
+        "Cir 2026 02 fr"
+      ]
+    },
+    {
+      "id": "EVAL_054",
+      "question": "Quelles sont les règles relatives à la monnaie électronique ?",
+      "language": "fr",
+      "category": "payments",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 2.54,
+      "answer_excerpt": "Les documents fournis ne mentionnent pas explicitement les règles relatives à la monnaie électronique. Les sources disponibles portent sur des sujets tels que le système de règlement Elyssa-RTGS ([Not",
+      "sources": [
+        "Cir 2025 17 fr",
+        "Cir 2024 05 fr",
+        "Cir 2024 14 fr"
+      ]
+    },
+    {
+      "id": "EVAL_055",
+      "question": "Quelles sont les règles applicables au crédit à la consommation ?",
+      "language": "fr",
+      "category": "credit_financing",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 22.95,
+      "answer_excerpt": "La question des règles applicables au crédit à la consommation n'est pas explicitement traitée dans les documents fournis. Cependant, certaines circulaires de la Banque Centrale de Tunisie (BCT) menti",
+      "sources": [
+        "Cir 2024 02 fr",
+        "Cir 2016 07 fr",
+        "Cir 2025 08 fr"
+      ]
+    },
+    {
+      "id": "EVAL_056",
+      "question": "Comment la BCT intervient-elle sur le marché monétaire ?",
+      "language": "fr",
+      "category": "monetary_policy",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.54,
+      "answer_excerpt": "البنك المركزي التونسي (ب.ت.ت) يتدخل في سوق النقد عبر عدة آليات تُنظِّمها القوانين التالية:  \n\n1. **عمليات السياسة النقدية عبر نظام \"إليسا-إر.تي.جي.إس\"**:  \n   وفقًا لـ[مذكرة 2022-05، المقال 11.1]، يُج",
+      "sources": [
+        "Note 2022 05 fr",
+        "Note 2022 05 fr",
+        "Note 2022 05 fr"
+      ]
+    },
+    {
+      "id": "EVAL_057",
+      "question": "Quelle est la portée de la loi 2015-26 relative à la LCB-FT ?",
+      "language": "fr",
+      "category": "specific_circulaires",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.56,
+      "answer_excerpt": "La loi organique n°2015-26 du 7 août 2015, relative à la lutte contre le terrorisme et à la répression du blanchiment d'argent, constitue le cadre juridique principal pour la prévention et la détectio",
+      "sources": [
+        "Cir 2025 17 fr",
+        "CB 2017 08 FR",
+        "Cir 2026 02 fr"
+      ]
+    },
+    {
+      "id": "EVAL_058",
+      "question": "ما هي القواعد المتعلقة بمركز الصرف لدى البنوك؟",
+      "language": "ar",
+      "category": "intermediaries",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 22.64,
+      "answer_excerpt": "I don't have specific information in the provided context about the rules related to the foreign exchange center ( مركز الصرف ) in banks. The documents referenced (Circulars 2025-03, 2017-02, 2021-05,",
+      "sources": [
+        "Cir 2023 05 fr",
+        "Cir 2021 05 fr",
+        "Cir 2017 02 fr"
+      ]
+    },
+    {
+      "id": "EVAL_059",
+      "question": "Comment réparer un moteur de voiture diesel ?",
+      "language": "fr",
+      "category": "off_topic",
+      "difficulty": "medium",
+      "expected_behavior": "refuse",
+      "status": "PASS",
+      "response_time_s": 0.06,
+      "answer_excerpt": "Sorry, I can only answer questions about Central Bank of Tunisia (BCT) regulations.",
+      "sources": []
+    },
+    {
+      "id": "EVAL_060",
+      "question": "Quelles sont les dispositions de la circulaire 2099-01 ?",
+      "language": "fr",
+      "category": "absent",
+      "difficulty": "medium",
+      "expected_behavior": "not_found",
+      "status": "PASS",
+      "response_time_s": 22.51,
+      "answer_excerpt": "Je n'ai pas accès à la circulaire n°2099-01 dans le contexte fourni. Les documents disponibles concernent les circulaires 2025-17, 2026-02, 2017-08 et 2024-02, portant sur des sujets comme la lutte co",
+      "sources": [
+        "Cir 2025 17 fr",
+        "Cir 2024 02 fr",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_061",
+      "question": "Quel est le dispositif de gel des avoirs prévu par la réglementation BCT ?",
+      "language": "fr",
+      "category": "aml_kyc",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.17,
+      "answer_excerpt": "Le dispositif de gel des avoirs prévu par la réglementation de la Banque Centrale de Tunisie (BCT) est principalement encadré par l'article **38 bis** de la **circulaire n°2018-09**, qui complète la c",
+      "sources": [
+        "Cir 2025 17 fr",
+        "CB 2017 08 FR",
+        "Cir 2017 02 fr"
+      ]
+    },
+    {
+      "id": "EVAL_062",
+      "question": "Comment est défini le ratio de solvabilité des établissements de crédit ?",
+      "language": "fr",
+      "category": "governance",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "FAIL",
+      "response_time_s": 24.09,
+      "answer_excerpt": "I don't have access to the specific definition of the solvency ratio for credit institutions in the provided context. The documents cited (e.g., Circulars 2025-01, 2025-08, 2023-05, and 2022-02) focus",
+      "sources": [
+        "Cir 2023 05 fr",
+        "Cir 2025 08 fr",
+        "Cir 2025 01 fr"
+      ]
+    },
+    {
+      "id": "EVAL_063",
+      "question": "Quel est le régime de l'allocation touristique pour les résidents ?",
+      "language": "fr",
+      "category": "forex_change",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 24.0,
+      "answer_excerpt": "Le régime de l'allocation touristique pour les résidents en Tunisie est réglementé par plusieurs circulaires et notes de la Banque Centrale de Tunisie (BCT), notamment :  \n\n1. **Circulaire 2018-04** e",
+      "sources": [
+        "Note 2016 30 fr",
+        "Cir 2018 04 fr",
+        "Cir 2020 17 fr"
+      ]
+    },
+    {
+      "id": "EVAL_064",
+      "question": "Comment sont gérés les incidents de paiement par carte bancaire ?",
+      "language": "fr",
+      "category": "payments",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.59,
+      "answer_excerpt": "Les documents fournis ne mentionnent pas explicitement la gestion des incidents de paiement par carte bancaire. Ils se concentrent principalement sur les règles relatives aux chèques impayés (Source 3",
+      "sources": [
+        "Cir 2024 14 fr",
+        "Cir 2018 09 fr",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_065",
+      "question": "Quelles sont les conditions d'octroi des microcrédits ?",
+      "language": "fr",
+      "category": "credit_financing",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "FAIL",
+      "response_time_s": 22.29,
+      "answer_excerpt": "I don't have access to specific information about the conditions for granting microcredits in the provided context. The documents cited (Circulars 2016-08, 2025-07, 2023-01, and 2021-09) focus on fina",
+      "sources": [
+        "Cir 2021 09 fr",
+        "Cir 2025 07 fr",
+        "Cir 2023 01 fr"
+      ]
+    },
+    {
+      "id": "EVAL_066",
+      "question": "ما هي أدوات السياسة النقدية للبنك المركزي التونسي؟",
+      "language": "ar",
+      "category": "monetary_policy",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.74,
+      "answer_excerpt": "تُستخدم البنك المركزي التونسي (بنت) أدوات السياسة النقدية التالية لتنفيذ سياساتها النقدية، حسب ما ورد في **الدورية 2017-02** (المادة 3 والمادة 4) وجدول الخصائص المذكور في المادة 3:\n\n1. **العمليات الرئ",
+      "sources": [
+        "Cir 2020 10 fr",
+        "Cir 2017 02 fr",
+        "Cir 2017 02 fr"
+      ]
+    },
+    {
+      "id": "EVAL_067",
+      "question": "ما هو موضوع منشور البنك المركزي عدد 2017-08؟",
+      "language": "ar",
+      "category": "specific_circulaires",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "FAIL",
+      "response_time_s": 22.8,
+      "answer_excerpt": "لا توجد معلومات في السياق المقدم حول منشور البنك المركزي التونسي عدد **2017-08**. الوثائق المتوفرة تتعلق بمنشورات أخرى مثل:  \n- **مذكرة 2017-17** (تحيين مصنفة رموز مصدري اقتطاعات بنكية وبريدية)،  \n- *",
+      "sources": [
+        "Cir 2016 08 fr",
+        "Note 2017 73 ar",
+        "Note 2017 27 ar"
+      ]
+    },
+    {
+      "id": "EVAL_068",
+      "question": "What reporting obligations apply to authorized intermediaries?",
+      "language": "en",
+      "category": "intermediaries",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 3.27,
+      "answer_excerpt": "Authorized intermediaries in Tunisia are subject to specific reporting obligations under **Circular 2024-07**, which governs financial transfers involving non-profit entities. Key requirements include",
+      "sources": [
+        "CB 2017 08 FR",
+        "Cir 2021 05 fr",
+        "Cir 2024 07 fr"
+      ]
+    },
+    {
+      "id": "EVAL_069",
+      "question": "Quelle est la capitale de l'Australie ?",
+      "language": "fr",
+      "category": "off_topic",
+      "difficulty": "easy",
+      "expected_behavior": "refuse",
+      "status": "PASS",
+      "response_time_s": 0.07,
+      "answer_excerpt": "Sorry, I can only answer questions about Central Bank of Tunisia (BCT) regulations.",
+      "sources": []
+    },
+    {
+      "id": "EVAL_070",
+      "question": "Quel est le montant précis des amendes prévues à l'article 47 bis ?",
+      "language": "fr",
+      "category": "absent",
+      "difficulty": "hard",
+      "expected_behavior": "not_found",
+      "status": "PASS",
+      "response_time_s": 22.23,
+      "answer_excerpt": "I don't know. The provided documents (Circular 2017-08, Circular 2025-17, and related legal references) do not mention \"Article 47 bis\" or specify any monetary penalties. The texts focus on procedural",
+      "sources": [
+        "Cir 2025 17 fr",
+        "CB 2017 08 FR",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_071",
+      "question": "Quelles sont les obligations de formation du personnel en matière de LCB-FT ?",
+      "language": "fr",
+      "category": "aml_kyc",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 22.78,
+      "answer_excerpt": "تُلزم المنشآت الخاضعة للتنظيم، وفقًا لـ[Circular 2017-08، المادة 56]، بوضع برنامج تدريبي مستمر لموظفيها يتضمن معلومات حول التقنيات والأساليب والاتجاهات في مجال مكافحة غسل الأموال والتمويل الإرهابي. يج",
+      "sources": [
+        "Cir 2025 17 fr",
+        "CB 2017 08 FR",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_072",
+      "question": "Quelles sont les obligations relatives à la gestion des risques opérationnels ?",
+      "language": "fr",
+      "category": "governance",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 24.02,
+      "answer_excerpt": "Les obligations relatives à la gestion des risques opérationnels, conformément aux réglementations de la Banque Centrale de Tunisie (BCT), sont principalement encadrées par les circulaires suivantes :",
+      "sources": [
+        "Cir 2021 01 fr",
+        "Cir 2023 02 fr",
+        "Cir 2024 01 fr"
+      ]
+    },
+    {
+      "id": "EVAL_073",
+      "question": "Quelles sont les obligations comptables d'un bureau de change manuel ?",
+      "language": "fr",
+      "category": "forex_change",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.22,
+      "answer_excerpt": "Les obligations comptables d'un bureau de change manuel (Intermédiaire Agréé) en Tunisie, conformément aux circulaires de la Banque Centrale de Tunisie (BCT), incluent les points suivants :  \n\n1. **Sé",
+      "sources": [
+        "Cir 2017 02 fr",
+        "Cir 2016 01 fr",
+        "Cir 2021 02 fr"
+      ]
+    },
+    {
+      "id": "EVAL_074",
+      "question": "ما هم المشاركون في نظام الدفع الإجمالي الفوري إليسا؟",
+      "language": "ar",
+      "category": "payments",
+      "difficulty": "easy",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 23.01,
+      "answer_excerpt": "المشاركون في نظام الدفع الإجمالي الفوري \"إليسا\" (Elyssa-RTGS) يتم تعريفهم كما يلي وفقًا لـ [Note 2022 05 fr] (المادة الأولى: التعريفات):\n\n1. **المشارك (Participant)**:  \n   - كيان يرسل تعليمات الدفع ع",
+      "sources": [
+        "Note 2022 05 fr",
+        "Note 2022 05 fr",
+        "Note 2022 05 fr"
+      ]
+    },
+    {
+      "id": "EVAL_075",
+      "question": "ما هي شروط تمويل المؤسسات الصغرى والمتوسطة لدى البنك المركزي؟",
+      "language": "ar",
+      "category": "credit_financing",
+      "difficulty": "easy",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 4.58,
+      "answer_excerpt": "لتمويل المؤسسات الصغرى والمتوسطة (PME/PMI) وفقًا للوائح البنك المركزي التونسي (BCT)، تشمل الشروط والإجراءات ما يلي:\n\n1. **تقديم طلب تمويل مفصل**:  \n   - يجب على الوسيط المعتمَّ (Intermédiaire Agréé) ت",
+      "sources": [
+        "Cir 2024 02 fr",
+        "Cir 2020 04 fr",
+        "Note 2020 01 fr"
+      ]
+    },
+    {
+      "id": "EVAL_076",
+      "question": "ما هي القواعد المتعلقة بالاحتياطي الإجباري للبنوك؟",
+      "language": "ar",
+      "category": "monetary_policy",
+      "difficulty": "medium",
+      "expected_behavior": "answer",
+      "status": "FAIL",
+      "response_time_s": 62.92,
+      "answer_excerpt": "لا توجد معلومات في السياق المقدم حول قواعد الاحتياطي الإجباري للبنوك. لا تشير أي من الوثائق المذكورة (مثل [Circular 2018-06] أو [Circular 2025-08] أو غيرها) إلى متطلبات الاحتياطي الإجباري أو النسب الم",
+      "sources": [
+        "Note 2023 29 fr",
+        "Cir 2025 08 fr",
+        "Cir 2018 06 fr"
+      ]
+    },
+    {
+      "id": "EVAL_077",
+      "question": "ماذا ينص عليه القانون البنكي عدد 2016-48؟",
+      "language": "ar",
+      "category": "specific_circulaires",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 2.76,
+      "answer_excerpt": "القانون البنكي عدد 2016-48 المؤرخ في 11 يوليو 2016، المشار إليه في النصوص المقدمة، هو القانون الذي ينظم البنوك والمؤسسات المالية في تونس. وفقًا للسياق المقدم، يُستخدم هذا القانون كأساس قانوني في الدوا",
+      "sources": [
+        "Cir 2025 17 fr",
+        "CB 2017 08 FR",
+        "CB 2017 08 FR"
+      ]
+    },
+    {
+      "id": "EVAL_078",
+      "question": "What rules apply to convertible-dinar foreign accounts?",
+      "language": "en",
+      "category": "intermediaries",
+      "difficulty": "hard",
+      "expected_behavior": "answer",
+      "status": "PASS",
+      "response_time_s": 22.52,
+      "answer_excerpt": "The provided context does not contain specific information regarding rules for **convertible-dinar foreign accounts**. The referenced documents (e.g., [Circular 2016-01], [Circular 2021-03], [Circular",
+      "sources": [
+        "Cir 2016 10 fr",
+        "Cir 2021 03 fr",
+        "Cir 2021 03 fr"
+      ]
+    },
+    {
+      "id": "EVAL_079",
+      "question": "Peux-tu m'écrire un poème sur l'amour ?",
+      "language": "fr",
+      "category": "off_topic",
+      "difficulty": "easy",
+      "expected_behavior": "refuse",
+      "status": "PASS",
+      "response_time_s": 0.07,
+      "answer_excerpt": "Sorry, I can only answer questions about Central Bank of Tunisia (BCT) regulations.",
+      "sources": []
+    },
+    {
+      "id": "EVAL_080",
+      "question": "Quelles sont les règles BCT concernant les comptes de trading en actions Tesla ?",
+      "language": "fr",
+      "category": "absent",
+      "difficulty": "medium",
+      "expected_behavior": "not_found",
+      "status": "FAIL",
+      "response_time_s": 2.98,
+      "answer_excerpt": "La question posée concerne les règles de la Banque Centrale de Tunisie (BCT) relatives aux comptes de trading en actions Tesla. Cependant, **aucune disposition spécifique sur les comptes dédiés au tra",
+      "sources": [
+        "Note 2022 05 fr",
+        "Note 2022 05 fr",
+        "Cir 2020 12 fr"
+      ]
+    }
+  ]
+}

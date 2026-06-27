@@ -105,7 +105,7 @@ export default function ChatWindow({ messages, isLoading, onSend, onMsgSelect, s
             id="chat-input"
             className="chat-textarea"
             rows={1}
-            placeholder="Ask your regulatory question... (English, Français, العربية)"
+            placeholder="Ask your regulatory question… (English, French or Arabic)"
             value={input}
             onChange={e => setInput(e.target.value)}
             onKeyDown={handleKeyDown}

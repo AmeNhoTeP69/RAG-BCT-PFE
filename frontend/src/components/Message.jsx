@@ -1,5 +1,5 @@
 import ReactMarkdown from 'react-markdown'
-import { Building2, User, FileText, Network, ChevronRight } from 'lucide-react'
+import { Building2, User, FileText, Network, ChevronRight, Zap } from 'lucide-react'
 
 // Detect if text is predominantly Arabic/RTL
 function isRTL(text) {
@@ -33,6 +33,14 @@ export default function Message({ msg, isSelected, onSelect }) {
             ? <span>{msg.text}</span>
             : <ReactMarkdown>{msg.text}</ReactMarkdown>}
         </div>
+
+        {/* Cache indicator — answer served instantly from the semantic cache */}
+        {!isUser && msg.cached && (
+          <div className="cache-badge" title="Answer served instantly from the semantic cache">
+            <Zap size={11} />
+            Instant answer · cached
+          </div>
+        )}
 
         {/* Source tags */}
         {!isUser && msg.sources && msg.sources.length > 0 && (

@@ -53,14 +53,14 @@ LDA_MIN_TOKEN_LEN = 3       # Minimum token length for preprocessing
 # Thematic labels assigned manually after inspecting LDA output.
 # Each index corresponds to a topic ID (0-7).
 LDA_TOPIC_LABELS = [
-    "Gouvernance et Fonds Propres",           # établissements, organe, fonds propres, risques
-    "Cadre Légal et Réglementaire",           # banques, loi, relative, gouverneur, portant
-    "Bureaux de Change",                      # change, billet, bureau, dinars, manuel
-    "Systèmes de Paiement",                   # rtgs, elyssa, paiement, chèque, participant
-    "Gestion des Risques Opérationnels",      # paiement, système, risques, activité
-    "Politique Monétaire et Marchés",         # opérations, taux, contreparties, politique monétaire
-    "Crédit et Financement des Entreprises",  # crédit, financement, pme, fonds, ligne
-    "Intermédiaires Agréés et Devises",       # devises, agréés, intermédiaires, étranger, change
+    "Governance & Capital",                   # établissements, organe, fonds propres, risques
+    "Legal & Regulatory Framework",           # banques, loi, relative, gouverneur, portant
+    "Exchange Offices",                       # change, billet, bureau, dinars, manuel
+    "Payment Systems",                        # rtgs, elyssa, paiement, chèque, participant
+    "Operational Risk Management",            # paiement, système, risques, activité
+    "Monetary Policy & Markets",              # opérations, taux, contreparties, politique monétaire
+    "Corporate Credit & Financing",           # crédit, financement, pme, fonds, ligne
+    "Authorized Intermediaries & Forex",      # devises, agréés, intermédiaires, étranger, change
 ]
 
 # ── Word2Vec / Similarity ─────────────────────────────────────────────────────
@@ -85,6 +85,10 @@ GEMMA_API_KEY = os.getenv("GROQ_API_KEY", "")
 # Vector Search configs
 TOP_K_CHUNKS = 4           # Keep context tight to stay within Groq free-tier TPM budget
 MIN_RETRIEVAL_SCORE = 0.60 # Discard chunks with cosine similarity below this threshold
+# Truncate each context chunk so a request stays under Groq free-tier TPM (6000/min
+# for qwen3-32b). ~1400 chars × up to 5 chunks ≈ 1.8k tokens of context, leaving
+# room for the prompt + max_tokens output reservation.
+MAX_CONTEXT_CHUNK_CHARS = 1400
 
 # LLM Config (Using Groq Cloud for high-performance RAG)
 LLM_PROVIDER = "openai"  # "ollama", "openai", or "mock"

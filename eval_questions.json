@@ -1,0 +1,1602 @@
+[
+  {
+    "id": "EVAL_001",
+    "question": "Quelles sont les exigences en matière de LCB-FT pour les banques tunisiennes ?",
+    "language": "fr",
+    "category": "aml_kyc",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_002",
+    "question": "Quelles sont les règles de gouvernance des banques en Tunisie ?",
+    "language": "fr",
+    "category": "governance",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_003",
+    "question": "Quelles sont les conditions pour ouvrir un bureau de change ?",
+    "language": "fr",
+    "category": "forex_change",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_004",
+    "question": "Quels sont les participants au système RTGS Elyssa ?",
+    "language": "fr",
+    "category": "payments",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_005",
+    "question": "Comment financer une PME selon la réglementation de la BCT ?",
+    "language": "fr",
+    "category": "credit_financing",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_006",
+    "question": "Quels sont les instruments de politique monétaire de la BCT ?",
+    "language": "fr",
+    "category": "monetary_policy",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_007",
+    "question": "Quelles sont les obligations de la circulaire 2017-08 ?",
+    "language": "fr",
+    "category": "specific_circulaires",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_008",
+    "question": "Quelles sont les obligations de reporting des intermédiaires agréés ?",
+    "language": "fr",
+    "category": "intermediaries",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_009",
+    "question": "Comment préparer un couscous tunisien traditionnel ?",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_010",
+    "question": "Quelles sont les dispositions de la circulaire 1985-03 ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_011",
+    "question": "Quelles sont les obligations de vigilance à l'égard de la clientèle (KYC) ?",
+    "language": "fr",
+    "category": "aml_kyc",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_012",
+    "question": "Quelles sont les exigences en matière d'adéquation des fonds propres ?",
+    "language": "fr",
+    "category": "governance",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_013",
+    "question": "Quelles sont les obligations des intermédiaires agréés en devises ?",
+    "language": "fr",
+    "category": "forex_change",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_014",
+    "question": "Comment fonctionne le système de paiement de gros montants en Tunisie ?",
+    "language": "fr",
+    "category": "payments",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_015",
+    "question": "Quelles sont les conditions de refinancement des crédits accordés aux PME ?",
+    "language": "fr",
+    "category": "credit_financing",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_016",
+    "question": "Comment fonctionne l'appel d'offres de refinancement de la BCT ?",
+    "language": "fr",
+    "category": "monetary_policy",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_017",
+    "question": "Quel est l'objet de la circulaire BCT 2016-06 ?",
+    "language": "fr",
+    "category": "specific_circulaires",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_018",
+    "question": "Quelles opérations courantes les intermédiaires agréés peuvent-ils exécuter ?",
+    "language": "fr",
+    "category": "intermediaries",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_019",
+    "question": "Qui a gagné la dernière Coupe du monde de la FIFA ?",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_020",
+    "question": "Quelles sont les règles de la BCT sur les crypto-monnaies et le bitcoin ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_021",
+    "question": "Comment les banques doivent-elles déclarer les opérations suspectes à la CTAF ?",
+    "language": "fr",
+    "category": "aml_kyc",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_022",
+    "question": "Quel est le rôle du conseil d'administration dans la gouvernance bancaire ?",
+    "language": "fr",
+    "category": "governance",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_023",
+    "question": "Quelles sont les règles applicables aux opérations de change manuel ?",
+    "language": "fr",
+    "category": "forex_change",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_024",
+    "question": "Quelles sont les règles applicables au système de télécompensation ?",
+    "language": "fr",
+    "category": "payments",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_025",
+    "question": "Quelles sont les règles relatives à la classification des créances ?",
+    "language": "fr",
+    "category": "credit_financing",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_026",
+    "question": "Quelles sont les règles relatives à la réserve obligatoire des banques ?",
+    "language": "fr",
+    "category": "monetary_policy",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_027",
+    "question": "Quels sont les liens entre la loi 2016-48 et les circulaires de la BCT ?",
+    "language": "fr",
+    "category": "specific_circulaires",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_028",
+    "question": "Quelles sont les règles applicables aux comptes étrangers en dinars convertibles ?",
+    "language": "fr",
+    "category": "intermediaries",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_029",
+    "question": "Quelle est la météo prévue demain à Tunis ?",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_030",
+    "question": "Quel est le montant exact minimum du capital pour créer une banque en dinars ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "hard",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_031",
+    "question": "Quelles sont les obligations de lutte contre le financement du terrorisme ?",
+    "language": "fr",
+    "category": "aml_kyc",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_032",
+    "question": "Quelles sont les missions du comité d'audit d'une banque ?",
+    "language": "fr",
+    "category": "governance",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_033",
+    "question": "Comment s'effectue le rapatriement des recettes d'exportation ?",
+    "language": "fr",
+    "category": "forex_change",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_034",
+    "question": "Quelles sont les obligations relatives au traitement des chèques sans provision ?",
+    "language": "fr",
+    "category": "payments",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_035",
+    "question": "Quelles sont les obligations de provisionnement des créances classées ?",
+    "language": "fr",
+    "category": "credit_financing",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_036",
+    "question": "Quelles garanties sont éligibles aux opérations de politique monétaire ?",
+    "language": "fr",
+    "category": "monetary_policy",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_037",
+    "question": "Que prévoit la loi bancaire 2016-48 relative aux banques et établissements financiers ?",
+    "language": "fr",
+    "category": "specific_circulaires",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_038",
+    "question": "Quelles sont les obligations en matière de position de change des banques ?",
+    "language": "fr",
+    "category": "intermediaries",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_039",
+    "question": "Donne-moi une recette de pâtisserie au miel.",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_040",
+    "question": "Que prévoit la circulaire 1990-07 sur les agences bancaires ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_041",
+    "question": "Quelles mesures de vigilance renforcée s'appliquent aux personnes politiquement exposées ?",
+    "language": "fr",
+    "category": "aml_kyc",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_042",
+    "question": "Quelles sont les exigences relatives au système de contrôle interne ?",
+    "language": "fr",
+    "category": "governance",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_043",
+    "question": "Quelles sont les conditions d'ouverture d'un compte en devises ?",
+    "language": "fr",
+    "category": "forex_change",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_044",
+    "question": "Quel est le cadre de surveillance des systèmes de paiement par la BCT ?",
+    "language": "fr",
+    "category": "payments",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_045",
+    "question": "Quel est le cadre des lignes de crédit extérieures pour le financement ?",
+    "language": "fr",
+    "category": "credit_financing",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_046",
+    "question": "Quel est le rôle du taux directeur dans la politique monétaire ?",
+    "language": "fr",
+    "category": "monetary_policy",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_047",
+    "question": "Quelles dispositions introduit la circulaire 2018-06 ?",
+    "language": "fr",
+    "category": "specific_circulaires",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_048",
+    "question": "ما هي التزامات التصريح للوسطاء المعتمدين؟",
+    "language": "ar",
+    "category": "intermediaries",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_049",
+    "question": "Quels sont les meilleurs films à voir cette année ?",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_050",
+    "question": "Quel est le taux directeur exact fixé par la BCT en janvier 2099 ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "hard",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_051",
+    "question": "Quelles sont les obligations d'identification du bénéficiaire effectif ?",
+    "language": "fr",
+    "category": "aml_kyc",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_052",
+    "question": "Quelles sont les règles d'incompatibilité pour les dirigeants de banques ?",
+    "language": "fr",
+    "category": "governance",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_053",
+    "question": "Quelles sont les obligations de déclaration des transferts en devises ?",
+    "language": "fr",
+    "category": "forex_change",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_054",
+    "question": "Quelles sont les règles relatives à la monnaie électronique ?",
+    "language": "fr",
+    "category": "payments",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_055",
+    "question": "Quelles sont les règles applicables au crédit à la consommation ?",
+    "language": "fr",
+    "category": "credit_financing",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_056",
+    "question": "Comment la BCT intervient-elle sur le marché monétaire ?",
+    "language": "fr",
+    "category": "monetary_policy",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_057",
+    "question": "Quelle est la portée de la loi 2015-26 relative à la LCB-FT ?",
+    "language": "fr",
+    "category": "specific_circulaires",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_058",
+    "question": "ما هي القواعد المتعلقة بمركز الصرف لدى البنوك؟",
+    "language": "ar",
+    "category": "intermediaries",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_059",
+    "question": "Comment réparer un moteur de voiture diesel ?",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "medium",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_060",
+    "question": "Quelles sont les dispositions de la circulaire 2099-01 ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_061",
+    "question": "Quel est le dispositif de gel des avoirs prévu par la réglementation BCT ?",
+    "language": "fr",
+    "category": "aml_kyc",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_062",
+    "question": "Comment est défini le ratio de solvabilité des établissements de crédit ?",
+    "language": "fr",
+    "category": "governance",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_063",
+    "question": "Quel est le régime de l'allocation touristique pour les résidents ?",
+    "language": "fr",
+    "category": "forex_change",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_064",
+    "question": "Comment sont gérés les incidents de paiement par carte bancaire ?",
+    "language": "fr",
+    "category": "payments",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_065",
+    "question": "Quelles sont les conditions d'octroi des microcrédits ?",
+    "language": "fr",
+    "category": "credit_financing",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_066",
+    "question": "ما هي أدوات السياسة النقدية للبنك المركزي التونسي؟",
+    "language": "ar",
+    "category": "monetary_policy",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_067",
+    "question": "ما هو موضوع منشور البنك المركزي عدد 2017-08؟",
+    "language": "ar",
+    "category": "specific_circulaires",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_068",
+    "question": "What reporting obligations apply to authorized intermediaries?",
+    "language": "en",
+    "category": "intermediaries",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_069",
+    "question": "Quelle est la capitale de l'Australie ?",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_070",
+    "question": "Quel est le montant précis des amendes prévues à l'article 47 bis ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "hard",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_071",
+    "question": "Quelles sont les obligations de formation du personnel en matière de LCB-FT ?",
+    "language": "fr",
+    "category": "aml_kyc",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_072",
+    "question": "Quelles sont les obligations relatives à la gestion des risques opérationnels ?",
+    "language": "fr",
+    "category": "governance",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_073",
+    "question": "Quelles sont les obligations comptables d'un bureau de change manuel ?",
+    "language": "fr",
+    "category": "forex_change",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_074",
+    "question": "ما هم المشاركون في نظام الدفع الإجمالي الفوري إليسا؟",
+    "language": "ar",
+    "category": "payments",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_075",
+    "question": "ما هي شروط تمويل المؤسسات الصغرى والمتوسطة لدى البنك المركزي؟",
+    "language": "ar",
+    "category": "credit_financing",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_076",
+    "question": "ما هي القواعد المتعلقة بالاحتياطي الإجباري للبنوك؟",
+    "language": "ar",
+    "category": "monetary_policy",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_077",
+    "question": "ماذا ينص عليه القانون البنكي عدد 2016-48؟",
+    "language": "ar",
+    "category": "specific_circulaires",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_078",
+    "question": "What rules apply to convertible-dinar foreign accounts?",
+    "language": "en",
+    "category": "intermediaries",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_079",
+    "question": "Peux-tu m'écrire un poème sur l'amour ?",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_080",
+    "question": "Quelles sont les règles BCT concernant les comptes de trading en actions Tesla ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_081",
+    "question": "ما هي التزامات مكافحة غسل الأموال بالنسبة للبنوك التونسية؟",
+    "language": "ar",
+    "category": "aml_kyc",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_082",
+    "question": "Quelles sont les exigences de fonds propres pour la couverture des risques ?",
+    "language": "fr",
+    "category": "governance",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_083",
+    "question": "ما هي شروط فتح مكتب صرافة؟",
+    "language": "ar",
+    "category": "forex_change",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_084",
+    "question": "كيف يعمل نظام المقاصة الإلكترونية في تونس؟",
+    "language": "ar",
+    "category": "payments",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_085",
+    "question": "ما هي القواعد المتعلقة بتصنيف الديون البنكية؟",
+    "language": "ar",
+    "category": "credit_financing",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_086",
+    "question": "ما هو دور نسبة الفائدة المديرية في السياسة النقدية؟",
+    "language": "ar",
+    "category": "monetary_policy",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_087",
+    "question": "What does circular 2017-08 require from banks?",
+    "language": "en",
+    "category": "specific_circulaires",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_088",
+    "question": "Quelles sont les conditions d'octroi de la qualité d'intermédiaire agréé ?",
+    "language": "fr",
+    "category": "intermediaries",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_089",
+    "question": "Quels exercices de musculation pour les bras ?",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_090",
+    "question": "Quelle est la politique de la Banque de France sur les taux négatifs ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_091",
+    "question": "ما هي إجراءات اليقظة تجاه العملاء المعروفة باسم اعرف عميلك؟",
+    "language": "ar",
+    "category": "aml_kyc",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_092",
+    "question": "ما هي قواعد حوكمة البنوك في تونس؟",
+    "language": "ar",
+    "category": "governance",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_093",
+    "question": "ما هي التزامات الوسطاء المعتمدين في العملة الأجنبية؟",
+    "language": "ar",
+    "category": "forex_change",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_094",
+    "question": "ما هي القواعد المتعلقة بالنقود الإلكترونية؟",
+    "language": "ar",
+    "category": "payments",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_095",
+    "question": "ما هي شروط إعادة تمويل القروض الممنوحة للمؤسسات؟",
+    "language": "ar",
+    "category": "credit_financing",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_096",
+    "question": "What are the monetary policy instruments of the BCT?",
+    "language": "en",
+    "category": "monetary_policy",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_097",
+    "question": "What is the scope of banking law 2016-48?",
+    "language": "en",
+    "category": "specific_circulaires",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_098",
+    "question": "Quelles sont les obligations de couverture des opérations en devises ?",
+    "language": "fr",
+    "category": "intermediaries",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_099",
+    "question": "Comment apprendre à jouer de la guitare ?",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_100",
+    "question": "Combien d'agences possède exactement la Banque Centrale de Tunisie ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "hard",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_101",
+    "question": "كيف يجب على البنوك الإبلاغ عن العمليات المشبوهة؟",
+    "language": "ar",
+    "category": "aml_kyc",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_102",
+    "question": "ما هي متطلبات كفاية الأموال الذاتية للبنوك؟",
+    "language": "ar",
+    "category": "governance",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_103",
+    "question": "ما هي القواعد المطبقة على عمليات الصرف اليدوي؟",
+    "language": "ar",
+    "category": "forex_change",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_104",
+    "question": "What are the participants in the RTGS Elyssa system?",
+    "language": "en",
+    "category": "payments",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_105",
+    "question": "How can an SME be financed under BCT regulations?",
+    "language": "en",
+    "category": "credit_financing",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_106",
+    "question": "How does the BCT refinancing tender operate?",
+    "language": "en",
+    "category": "monetary_policy",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_107",
+    "question": "Quel est l'objet de la circulaire 2018-10 de la BCT ?",
+    "language": "fr",
+    "category": "specific_circulaires",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_108",
+    "question": "Quelles sont les obligations de rapatriement pour les exportateurs ?",
+    "language": "fr",
+    "category": "intermediaries",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_109",
+    "question": "ما هو سعر البترول اليوم؟",
+    "language": "ar",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_110",
+    "question": "ما هي أحكام المنشور عدد 1985-03؟",
+    "language": "ar",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_111",
+    "question": "ما هي تدابير اليقظة المعززة تجاه الأشخاص المعرضين سياسيا؟",
+    "language": "ar",
+    "category": "aml_kyc",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_112",
+    "question": "ما هو دور مجلس الإدarة في الحوكمة البنكية؟",
+    "language": "ar",
+    "category": "governance",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_113",
+    "question": "ما هي شروط فتح حساب بالعملة الأجنبية؟",
+    "language": "ar",
+    "category": "forex_change",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_114",
+    "question": "How does the large-value payment system work in Tunisia?",
+    "language": "en",
+    "category": "payments",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_115",
+    "question": "What are the rules for the classification of bank receivables?",
+    "language": "en",
+    "category": "credit_financing",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_116",
+    "question": "What are the reserve requirement rules for banks?",
+    "language": "en",
+    "category": "monetary_policy",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_117",
+    "question": "Que prévoit la circulaire 2020-05 de la BCT ?",
+    "language": "fr",
+    "category": "specific_circulaires",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_118",
+    "question": "ما هي شروط منح صفة الوسيط المعتمد؟",
+    "language": "ar",
+    "category": "intermediaries",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_119",
+    "question": "كيف أحضر طبق الكسكسي التونسي؟",
+    "language": "ar",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_120",
+    "question": "ما هي قواعد البنك المركزي بشأن العملات المشفرة والبيتكوين؟",
+    "language": "ar",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_121",
+    "question": "What are the anti-money laundering requirements for Tunisian banks?",
+    "language": "en",
+    "category": "aml_kyc",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_122",
+    "question": "ما هي متطلبات نظام الرقابة الداخلية في البنوك؟",
+    "language": "ar",
+    "category": "governance",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_123",
+    "question": "What are the requirements for foreign exchange operations?",
+    "language": "en",
+    "category": "forex_change",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_124",
+    "question": "What rules govern electronic money in Tunisia?",
+    "language": "en",
+    "category": "payments",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_125",
+    "question": "What are the conditions for refinancing loans granted to SMEs?",
+    "language": "en",
+    "category": "credit_financing",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_126",
+    "question": "Quelles sont les conditions de la facilité de dépôt auprès de la BCT ?",
+    "language": "fr",
+    "category": "monetary_policy",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_127",
+    "question": "What is the purpose of BCT circular 2016-06?",
+    "language": "en",
+    "category": "specific_circulaires",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_128",
+    "question": "What hedging obligations apply to foreign-currency transactions?",
+    "language": "en",
+    "category": "intermediaries",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_129",
+    "question": "من فاز بكأس العالم لكرة القدم؟",
+    "language": "ar",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_130",
+    "question": "ما هو المبلغ الأدنى الدقيق لرأس مال البنك بالدينار؟",
+    "language": "ar",
+    "category": "absent",
+    "difficulty": "hard",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_131",
+    "question": "What customer due diligence obligations apply to banks?",
+    "language": "en",
+    "category": "aml_kyc",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_132",
+    "question": "What are the corporate governance rules for banks in Tunisia?",
+    "language": "en",
+    "category": "governance",
+    "difficulty": "easy",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_133",
+    "question": "What are the conditions to open a manual exchange office?",
+    "language": "en",
+    "category": "forex_change",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_134",
+    "question": "What is the BCT oversight framework for payment systems?",
+    "language": "en",
+    "category": "payments",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_135",
+    "question": "What rules apply to consumer credit in Tunisia?",
+    "language": "en",
+    "category": "credit_financing",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_136",
+    "question": "What collateral is eligible for BCT open-market operations?",
+    "language": "en",
+    "category": "monetary_policy",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_137",
+    "question": "ما هي أفضل الوجهات السياحية في العالم؟",
+    "language": "ar",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_138",
+    "question": "ما هي أحكام المنشور عدد 2099-01؟",
+    "language": "ar",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_139",
+    "question": "How should banks report suspicious transactions?",
+    "language": "en",
+    "category": "aml_kyc",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_140",
+    "question": "What are the capital adequacy requirements for credit institutions?",
+    "language": "en",
+    "category": "governance",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_141",
+    "question": "What are the obligations of authorized foreign-exchange intermediaries?",
+    "language": "en",
+    "category": "forex_change",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_142",
+    "question": "Quelles sont les obligations des établissements de paiement en Tunisie ?",
+    "language": "fr",
+    "category": "payments",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_143",
+    "question": "Quelles sont les règles relatives au ratio de division des risques ?",
+    "language": "fr",
+    "category": "credit_financing",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_144",
+    "question": "ما هي شروط تسهيلات الإيداع لدى البنك المركزي؟",
+    "language": "ar",
+    "category": "monetary_policy",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_145",
+    "question": "ما هي حالة الطقس غدا في تونس؟",
+    "language": "ar",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_146",
+    "question": "ما هي شروط الترخيص البنكي الدقيقة في تونس بالمبالغ؟",
+    "language": "ar",
+    "category": "absent",
+    "difficulty": "hard",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_147",
+    "question": "What are the obligations regarding identification of the beneficial owner?",
+    "language": "en",
+    "category": "aml_kyc",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_148",
+    "question": "What is the role of the audit committee in a bank?",
+    "language": "en",
+    "category": "governance",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_149",
+    "question": "How is the repatriation of export proceeds regulated?",
+    "language": "en",
+    "category": "forex_change",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_150",
+    "question": "ما هي قواعد المقاصة بين البنوك في تونس؟",
+    "language": "ar",
+    "category": "payments",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_151",
+    "question": "ما هي قواعد تكوين المدخرات لمواجهة الديون المصنفة؟",
+    "language": "ar",
+    "category": "credit_financing",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_152",
+    "question": "Who won the last FIFA World Cup?",
+    "language": "en",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_153",
+    "question": "What are the provisions of circular 1985-03?",
+    "language": "en",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_154",
+    "question": "Quelles sont les obligations relatives aux virements électroniques transfrontaliers ?",
+    "language": "fr",
+    "category": "aml_kyc",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_155",
+    "question": "Quelles sont les obligations de publication des états financiers des banques ?",
+    "language": "fr",
+    "category": "governance",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_156",
+    "question": "Quelles sont les règles de cotation des devises par les intermédiaires agréés ?",
+    "language": "fr",
+    "category": "forex_change",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_157",
+    "question": "What security requirements apply to electronic payment instruments?",
+    "language": "en",
+    "category": "payments",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_158",
+    "question": "What is the weather forecast for tomorrow?",
+    "language": "en",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_159",
+    "question": "What are the BCT rules on cryptocurrencies and bitcoin?",
+    "language": "en",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_160",
+    "question": "What record-keeping obligations apply to customer identification documents?",
+    "language": "en",
+    "category": "aml_kyc",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_161",
+    "question": "What are the fit-and-proper requirements for bank executives?",
+    "language": "en",
+    "category": "governance",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_162",
+    "question": "What are the rules for non-resident foreign-currency accounts?",
+    "language": "en",
+    "category": "forex_change",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_163",
+    "question": "Can you recommend a good Italian restaurant?",
+    "language": "en",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_164",
+    "question": "What is the exact minimum capital amount to create a bank in dinars?",
+    "language": "en",
+    "category": "absent",
+    "difficulty": "hard",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_165",
+    "question": "ما هي التزامات اليقظة المستمرة تجاه العمليات البنكية؟",
+    "language": "ar",
+    "category": "aml_kyc",
+    "difficulty": "hard",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_166",
+    "question": "ما هي مهام لجنة المخاطر داخل البنك؟",
+    "language": "ar",
+    "category": "governance",
+    "difficulty": "medium",
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "EVAL_167",
+    "question": "How do I train for a marathon?",
+    "language": "en",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_168",
+    "question": "What does circular 2099-01 stipulate?",
+    "language": "en",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_169",
+    "question": "What is the best smartphone to buy in 2025?",
+    "language": "en",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_170",
+    "question": "What is the BCT policy on trading Tesla stocks?",
+    "language": "en",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_171",
+    "question": "Write me a short story about a dragon.",
+    "language": "en",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_172",
+    "question": "Quelles sont les dispositions de la circulaire 2030-99 sur l'intelligence artificielle ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "hard",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_173",
+    "question": "Comment planter des tomates dans un jardin ?",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_174",
+    "question": "Quel est le salaire moyen d'un employé de la BCT ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_175",
+    "question": "Quelle est la distance entre la Terre et la Lune ?",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "medium",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_176",
+    "question": "Quelles sont les prévisions de croissance du PIB tunisien pour 2040 ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "hard",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_177",
+    "question": "Quels sont les bienfaits du yoga pour la santé ?",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_178",
+    "question": "ما هو متوسط راتب موظف البنك المركزي التونسي؟",
+    "language": "ar",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_179",
+    "question": "Comment fonctionne un réacteur nucléaire ?",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "hard",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_180",
+    "question": "ما هي توقعات نمو الاقتصاد التونسي لسنة 2040؟",
+    "language": "ar",
+    "category": "absent",
+    "difficulty": "hard",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_181",
+    "question": "ما هي فوائد ممارسة الرياضة يوميا؟",
+    "language": "ar",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_182",
+    "question": "What is the average salary of a BCT employee?",
+    "language": "en",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_183",
+    "question": "كيف أتعلم اللغة الإنجليزية بسرعة؟",
+    "language": "ar",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_184",
+    "question": "What are the GDP growth forecasts for Tunisia in 2040?",
+    "language": "en",
+    "category": "absent",
+    "difficulty": "hard",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_185",
+    "question": "What movies are playing in cinemas this week?",
+    "language": "en",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_186",
+    "question": "Quelles sont les règles de la circulaire 1975-01 sur le crédit agricole ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "hard",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_187",
+    "question": "How do airplanes stay in the air?",
+    "language": "en",
+    "category": "off_topic",
+    "difficulty": "medium",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_188",
+    "question": "Quel est le numéro de téléphone du gouverneur de la BCT ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "easy",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_189",
+    "question": "Quelle équipe de football est la meilleure au monde ?",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_190",
+    "question": "ما هو رقم هاتف محافظ البنك المركزي؟",
+    "language": "ar",
+    "category": "absent",
+    "difficulty": "easy",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_191",
+    "question": "Donne-moi des conseils pour perdre du poids.",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_192",
+    "question": "How many employees work at the Central Bank of Tunisia exactly?",
+    "language": "en",
+    "category": "absent",
+    "difficulty": "hard",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_193",
+    "question": "ما هو أفضل نظام غذائي لإنقاص الوزن؟",
+    "language": "ar",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_194",
+    "question": "Quelle circulaire BCT régit les paris sportifs en ligne ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_195",
+    "question": "What is the tallest mountain in the world?",
+    "language": "en",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_196",
+    "question": "ما هو المنشور الذي ينظم المراهنات الرياضية عبر الإنترنت؟",
+    "language": "ar",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_197",
+    "question": "Comment décorer un salon moderne ?",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "easy",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_198",
+    "question": "What circular governs online sports betting in Tunisia?",
+    "language": "en",
+    "category": "absent",
+    "difficulty": "medium",
+    "expected_behavior": "not_found"
+  },
+  {
+    "id": "EVAL_199",
+    "question": "Quelles sont les règles du jeu d'échecs ?",
+    "language": "fr",
+    "category": "off_topic",
+    "difficulty": "medium",
+    "expected_behavior": "refuse"
+  },
+  {
+    "id": "EVAL_200",
+    "question": "Quelles sont les dispositions exactes sur les NFT dans la réglementation BCT ?",
+    "language": "fr",
+    "category": "absent",
+    "difficulty": "hard",
+    "expected_behavior": "not_found"
+  }
+]
