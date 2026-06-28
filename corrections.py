@@ -19,8 +19,13 @@ import database as db
 log = logging.getLogger(__name__)
 
 # Cosine threshold for considering an approved correction relevant to a new query.
-CORRECTION_MATCH_THRESHOLD = 0.55
-MAX_INJECTED = 3
+# BCT regulatory questions cluster tightly in embedding space, so a low threshold
+# matches "everything to everything". 0.62 keeps only genuinely on-subject hits.
+CORRECTION_MATCH_THRESHOLD = 0.62
+# Inject only the single best-matching verified note. With multiple notes a question
+# could pick up cross-topic ones (a governance Q grabbing an FX-position fact); the
+# top-1 is the most relevant and avoids that noise.
+MAX_INJECTED = 1
 
 # Phrases that signal the assistant accepted a correction (it conceded a mistake).
 _CONCESSION_RE = re.compile(
@@ -61,7 +66,14 @@ def find_relevant(model, query: str, threshold: float = CORRECTION_MATCH_THRESHO
             continue
         v = np.frombuffer(emb, dtype=np.float32)
         sim = float(v @ qv)
-        if sim >= threshold:
+        # A correction may set its own higher bar (min_sim) so a narrow note only
+        # fires for its true subject, not semantically-adjacent neighbours.
+        try:
+            row_min = r["min_sim"]
+        except (KeyError, IndexError):
+            row_min = None
+        bar = max(threshold, row_min) if row_min is not None else threshold
+        if sim >= bar:
             scored.append((sim, r["correction"]))
     scored.sort(key=lambda x: x[0], reverse=True)
     return [c for _, c in scored[:limit]]

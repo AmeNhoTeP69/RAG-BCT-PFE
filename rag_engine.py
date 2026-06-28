@@ -162,22 +162,37 @@ class RAGEngine:
             "model": config.OPENAI_MODEL,
             "messages": [{"role": "user", "content": prompt}],
             "temperature": config.LLM_TEMPERATURE,
-            "max_tokens": 2000
+            # Groq free tier caps qwen3-32b at 6000 tokens/minute, counting
+            # prompt + max_tokens. A large graph prompt (~4-5k) plus a 2000 output
+            # reservation can exceed 6000 → a permanent 429 no wait can clear.
+            # 1024 keeps the worst case under the ceiling; answers rarely exceed it.
+            "max_tokens": 1024
         }
 
-        max_retries = 3
+        # Honor Groq's Retry-After header so a contended request waits exactly as
+        # long as the free-tier TPM window needs, instead of guessing and erroring.
+        max_retries = 6
         for attempt in range(max_retries):
             try:
-                response = requests.post(url, headers=headers, json=payload, timeout=15)
+                response = requests.post(url, headers=headers, json=payload, timeout=30)
                 if response.status_code == 200:
                     import re
                     content = response.json()['choices'][0]['message']['content']
                     content = re.sub(r'<think>.*?</think>', '', content, flags=re.DOTALL).strip()
                     return content
                 elif response.status_code == 429:
-                    wait_time = 20 + attempt * 20  # 20s, 40s, 60s
-                    log.warning(f"Rate limit hit (429). Waiting {wait_time}s before retry {attempt+1}/{max_retries}...")
+                    ra = response.headers.get("retry-after") or response.headers.get("Retry-After")
+                    try:
+                        wait_time = float(ra) + 2 if ra else 15 + attempt * 15
+                    except (TypeError, ValueError):
+                        wait_time = 15 + attempt * 15
+                    wait_time = min(max(wait_time, 5), 90)  # clamp 5..90s
+                    log.warning(f"Rate limit hit (429). Waiting {wait_time:.0f}s before retry {attempt+1}/{max_retries}...")
                     time.sleep(wait_time)
+                elif response.status_code == 413:
+                    # Request too large — retrying won't help.
+                    log.error(f"LLM API Error: 413 - request too large")
+                    return f"Erreur API LLM: 413"
                 else:
                     log.error(f"LLM API Error: {response.status_code} - {response.text}")
                     return f"Erreur API LLM: {response.status_code}"
@@ -185,8 +200,8 @@ class RAGEngine:
                 log.error(f"LLM Connection Error: {str(e)}")
                 if attempt == max_retries - 1:
                     return f"Erreur de connexion LLM: {str(e)}"
-                time.sleep(1)
-        
+                time.sleep(2)
+
         return "Erreur: Limite de taux dépassée après plusieurs tentatives."
 
     def _call_mock(self, query: str, context: str):

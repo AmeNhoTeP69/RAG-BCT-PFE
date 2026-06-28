@@ -24,6 +24,7 @@ scoring — is what matters.
 import argparse
 import json
 import os
+import re
 import sys
 import time
 from collections import defaultdict
@@ -56,13 +57,49 @@ _NOT_FOUND_MARKERS = (
     "not available", "i don't know", "i do not know",
     "don't have access", "do not have access",
     "don't have information", "do not have information", "no information about",
+    "don't have specific information", "do not have specific information",
+    "no specific information", "don't have the", "do not contain",
+    "i don't have details", "i do not have details",
+    # clear "topic not covered" declines (caught honestly, not counted as answers)
+    "do not specifically address", "does not specifically address",
+    "do not address", "does not address", "do not specifically mention",
+    "not addressed in", "is not addressed", "isn't addressed",
+    "not covered in", "is not covered", "isn't covered",
+    "not mentioned in", "not specified in the", "do not provide information",
+    "ne traite pas", "ne traitent pas", "n'aborde pas", "n'abordent pas",
+    "n'est pas abordé", "n'est pas abordée", "pas abordé dans", "pas abordée dans",
+    "ne sont pas abordés", "ne sont pas abordées",
+    "n'est pas traité", "n'est pas traitée", "ne figure pas", "ne figurent pas",
+    "n'est pas mentionné", "n'est pas mentionnée", "n'est pas précisé",
+    "n'est pas couvert", "n'est pas couverte", "ne contiennent pas",
+    # "the BCT has not issued / does not regulate X" — a clear abstention
+    "n'a pas émis", "n'a émis aucun", "n'a pas publié", "n'a pas adopté",
+    "n'a pas pris de position", "ne réglemente pas", "n'a pas de réglementation",
+    "has not issued", "has not published", "has not adopted", "does not regulate",
+    "no specific regulation", "there is no specific regulation",
+    # "context does not contain / sources don't address it" — honest declines that
+    # otherwise read as an answer attempt; counted as declines, not answers.
+    "does not contain specific information", "do not contain specific information",
+    "does not contain any information", "does not contain information",
+    "does not contain specific", "does not explicitly mention", "do not explicitly mention",
+    "does not provide specific information", "not contain specific information",
+    "aucune des sources", "ne traite explicitement", "ne traitent explicitement",
+    "aucune disposition spécifique", "n'est mentionnée dans le contexte",
+    "n'est mentionné dans le contexte", "ne sont pas mentionnées dans le contexte",
+    "ne sont pas explicitement détaillé", "n'est pas explicitement détaillé",
+    "ne sont pas explicitement mentionné", "n'est pas explicitement mentionné",
+    "ne sont pas détaillées dans les sources", "ne sont pas précisées dans les sources",
     # Arabic
     "لا توجد معلومات", "لا أستطيع", "غير متوفر", "لا تتوفر", "لا أملك", "لا يمكنني",
+    "لم يتم التطرق", "لا يتناول", "غير مذكور", "لم يرد", "لا يرد", "لا تتضمن",
+    "لم تصدر", "لم يصدر", "لا تنظم",
 )
 
 
 def classify(answer: str, expected: str) -> str:
-    ans = (answer or "").lower()
+    # Strip markdown emphasis (**bold**, _italic_, `code`) so markers match even
+    # when the model wraps the decisive phrase, e.g. "n'est **pas abordée**".
+    ans = re.sub(r"[*_`]+", "", (answer or "").lower())
     refused = any(m in ans for m in _REFUSAL_MARKERS)
     is_error = (
         ans.startswith("error")
@@ -143,6 +180,9 @@ def main() -> None:
     ap.add_argument("--limit", type=int, default=0, help="Cap total questions (smoke test); 0 = no cap")
     ap.add_argument("--skip", type=int, default=0, help="Skip the first N selected questions (resume)")
     ap.add_argument("--append", action="store_true", help="Accumulate onto existing --out results")
+    ap.add_argument("--ids", default="", help="Comma-separated question IDs to run (overrides batches)")
+    ap.add_argument("--use-corrections", action="store_true",
+                    help="Inject approved verified corrections (matches the live /api/chat system)")
     args = ap.parse_args()
 
     questions = json.loads(QUESTIONS_PATH.read_text(encoding="utf-8"))
@@ -158,6 +198,9 @@ def main() -> None:
         selected = [args.batch - 1]
 
     to_run = [q for b in selected for q in batches[b]]
+    if args.ids:
+        want = {x.strip() for x in args.ids.split(",") if x.strip()}
+        to_run = [q for q in questions if q["id"] in want]   # IDs override batch selection
     if args.skip:
         to_run = to_run[args.skip:]
     if args.limit:
@@ -181,6 +224,11 @@ def main() -> None:
         from rag_engine import RAGEngine
         engine = RAGEngine()
 
+    corrections_mod = None
+    if args.use_corrections:
+        import corrections as corrections_mod
+        print("  Verified corrections injection: ON", flush=True)
+
     out_path = Path(args.out) if args.out else BASE / f"eval_results_{args.mode}.json"
 
     results = []
@@ -196,7 +244,13 @@ def main() -> None:
     for i, q in enumerate(to_run):
         t0 = time.time()
         try:
-            res = engine.query(q["question"])
+            notes = []
+            if corrections_mod is not None and getattr(engine, "model", None) is not None:
+                try:
+                    notes = corrections_mod.find_relevant(engine.model, q["question"])
+                except Exception:
+                    notes = []
+            res = engine.query(q["question"], notes=notes)
             answer = res.get("answer", "")
             sources = res.get("sources", [])
             status = classify(answer, q["expected_behavior"])

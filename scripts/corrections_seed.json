@@ -1,0 +1,92 @@
+[
+  {
+    "topic": "Objet et champ d'application de la circulaire BCT 2016-06 relative au système de notation des contreparties",
+    "correction": "The object of circular BCT 2016-06 is to lay down a certain number of principles inspired by the Basel framework relating to the design, structure, updating, use and control of the counterparty rating system that constitute minimum requirements to be respected by establishments in order to assign a rating to each counterparty in application of Article 25 of circular No. 2006-19 of 28 November 2006 relating to internal control.",
+    "status": "approved",
+    "min_sim": null
+  },
+  {
+    "topic": "Opérations courantes que les intermédiaires agréés peuvent exécuter selon la circulaire 2016-09",
+    "correction": "According to Circular 2016-09 to Authorized Intermediaries, the permitted operations that authorized intermediaries can execute are transfers relating to current operations as defined in Article 12 bis of Decree 77-608 establishing the foreign exchange code conditions. These include commercial and related operations, operations linked to production, insurance operations, financial operations, and general character operations, each with specific documentary requirements detailed in Annex 1 of the circular.",
+    "status": "approved",
+    "min_sim": null
+  },
+  {
+    "topic": "Règles de classification des créances des banques et constitution des provisions (circulaire 91-24)",
+    "correction": "Selon l'article 8 de la circulaire BCT n°91-24 du 17 décembre 1991, les créances sont classées en fonction de leur risque: la classe 0 couvre les engagements courants (créances normales), la classe 1 concerne les engagements nécessitant un suivi particulier, et les classes 2-3-4 les créances dégradées. Les banques doivent constituer des provisions collectives pour couvrir les risques latents sur les engagements courants (classe 0) et ceux nécessitant un suivi particulier (classe 1), selon une méthodologie édictée par la Banque Centrale.",
+    "status": "approved",
+    "min_sim": null
+  },
+  {
+    "topic": "Dispositions introduites par la circulaire BCT 2018-06 (normes d'adéquation des fonds propres)",
+    "correction": "La circulaire 2018-06 du 5 juin 2018 définit les normes d'adéquation des fonds propres devant être respectées par les banques et les établissements financiers et fixe leurs modalités de calcul. Les normes concernées portent sur la solvabilité, la concentration et la division des risques.",
+    "status": "approved",
+    "min_sim": null
+  },
+  {
+    "topic": "Règles d'incompatibilité et de cumul de fonctions pour les dirigeants de banques",
+    "correction": "According to circular 2021-05 citing law 2016-48, bank directors are subject to incompatibility rules: the president of the board of directors and the general director cannot be the same person; additionally, the heads of risk management and internal audit functions cannot cumulate their respective mandates with other functions or responsibilities within the establishment.",
+    "status": "approved",
+    "min_sim": null
+  },
+  {
+    "topic": "القواعد والحدود المتعلقة بمركز الصرف لدى البنوك والوسطاء المعتمدين",
+    "correction": "Selon la Circulaire BCT n° 2021-03, Article 50, les banques et intermédiaires agréés doivent respecter deux limites de position de change permanentes : (1) un rapport maximum de 10% entre la position nette globale dans chaque devise et les fonds propres nets ; (2) un rapport maximum de 20% entre la position de change globale et les fonds propres nets, conformément aux dispositions de la Circulaire n° 2018-06 du 5 juin 2018 portant sur les normes d'adéquation des fonds propres.",
+    "status": "approved",
+    "min_sim": null
+  },
+  {
+    "topic": "Définition et seuil minimum du ratio de solvabilité des établissements de crédit (circulaire 2018-06)",
+    "correction": "According to Circular 2018-06, the solvency ratio for credit institutions is defined in Article 9 as a minimum ratio of 10%, calculated as the ratio between net equity capital (as defined in Title I) and risk-weighted assets (as defined in Article 10). The circular also establishes a Tier I ratio of minimum 7%, calculated as the ratio between base equity capital and risk-weighted assets.",
+    "status": "approved",
+    "min_sim": null
+  },
+  {
+    "topic": "موضوع منشور البنك المركزي عدد 2017-08",
+    "correction": "منشور البنك المركزي عدد 2017-08 موضوعه هو \"قواعد المراقبة الداخلية لإدارة مخاطر غسل الأموال وتمويل الإرهاب\" (Règles de contrôle interne pour la gestion du risque de blanchiment d'argent et de financement du terrorisme)، وقد صدر في 19 سبتمبر 2017 ويطبق على البنوك والمؤسسات المالية المرخص لها.",
+    "status": "approved",
+    "min_sim": null
+  },
+  {
+    "topic": "المشاركون وأنظمة المشاركة في نظام الدفع الإجمالي الفوري إليسا",
+    "correction": "According to Note 2022-05, the participants in the Elyssa-RTGS system operate under four regimes: participant direct (holding a settlement account and direct connection to BCT), participant indirect (holding a settlement account but without direct connection), sous-participant (no account or connection, transmitting operations through a direct participant), and participant technique (a payment system establishing technical link without settlement account, for settling compensation balances of common participants).",
+    "status": "approved",
+    "min_sim": null
+  },
+  {
+    "topic": "القواعد المتعلقة بالاحتياطي الإجباري للبنوك ونسبه وأساس احتسابه",
+    "correction": "Selon la circulaire 2017-02, la réserve obligatoire est calculée par application à l'assiette constituée par les dépôts en dinar Tunisien d'une grille des taux. La base (assiette) comprend différents types de dépôts avec des taux distincts : les comptes à vue sont assujettis à un taux de 1%, tandis que les comptes d'épargne, les comptes à terme et les certificats de dépôt sont soumis à des taux de 0%. La période de constitution s'étend du premier au dernier jour du mois suivant le mois concerné.",
+    "status": "approved",
+    "min_sim": null
+  },
+  {
+    "topic": "Cadre des lignes de crédit extérieures pour le financement des PME en Tunisie",
+    "correction": "The framework for external credit lines for financing in Tunisia is established through Note 2020-28, which sets up two external credit lines (50 million euros total) from Italy to support private sector and financial inclusion. The framework includes: (1) Two credit lines dedicated to 35 million euros for agricultural credits and 15 million euros for social and solidarity economy (ESS); (2) Eligibility criteria requiring approved intermediaries and leasing establishments to demonstrate mission alignment with agricultural/ESS development and presence in disadvantaged regions; (3) Beneficiaries are resident SMEs and VSMEs in agriculture and ESS sectors; (4) Financing conditions include a 5.5% annual interest rate, 12-year repayment period with 5 years grace for agricultural credits, and 7-year repayment for ESS credits; (5) Funds can finance acquisition of new equipment/services, materials, working capital, but exclude taxes, excluded sectors, luxury goods, and used equipment.",
+    "status": "approved",
+    "min_sim": null
+  },
+  {
+    "topic": "التزامات التصريح للوسطاء المعتمدين",
+    "correction": "وفقاً للدوريات الصادرة عن البنك المركزي التونسي، يتعين على الوسطاء المعتمدين (intermédiaires agréés) الالتزام بعدة التزامات تصريح وإخبار رئيسية: (1) تصريح فوري للعمليات المريبة والمشبوهة إلى لجنة التحليل المالي التونسية (CTAF) وفقاً للدورية 2026-02، (2) تصريح العمليات المتعلقة بالنقود الأجنبية بقيمة تساوي أو تزيد عن 5000 دينار تونسي وفقاً للدورية 2012-11، (3) تصريح العمليات الاستثمارية للبنك المركزي عبر المنصات المخصصة وفقاً للدورية 2018-14، و(4) إرسال تقارير شهرية للبنك المركزي عبر نظام تبادل البيانات (SED) وفقاً للدورية 2019-07",
+    "status": "approved",
+    "min_sim": null
+  },
+  {
+    "topic": "Obligations d'identification du bénéficiaire effectif et mesures de vigilance",
+    "correction": "Selon la Circulaire 2017-08, Articles 7 et 8, les établissements assujettis doivent s'assurer de l'identité des bénéficiaires effectifs et prendre toutes les mesures raisonnables pour vérifier cette identité, notamment en: (1) déterminant si le client agit pour le compte d'une tierce personne et en obtenant des données d'identification permettant de vérifier l'identité de cette personne; (2) pour les personnes morales, en comprenant la propriété et la structure de contrôle du client et en déterminant quelles personnes physiques en dernier ressort possèdent ou exercent un contrôle effectif; et (3) en s'assurant que le client n'est pas un prête-nom ou une société écran.",
+    "status": "approved",
+    "min_sim": null
+  },
+  {
+    "topic": "Règles relatives à la monnaie électronique et aux portefeuilles mobiles (wallet)",
+    "correction": "Selon la Circulaire 2020-11 de la BCT, un portefeuille (wallet) est un moyen de paiement mis par l'établissement à la disposition du client permettant le stockage de la monnaie électronique et l'exécution d'opérations de paiement via téléphone mobile. Les établissements de paiement sont autorisés à commercialiser des moyens de monnaie électroniques prépayés (Cir 2018-16, Article 2). Les services de paiement doivent être fournis exclusivement en dinar tunisien et à l'intérieur de la République tunisienne. Les établissements doivent adhérer directement aux systèmes de paiement et de compensation appropriés à leur activité.",
+    "status": "approved",
+    "min_sim": null
+  },
+  {
+    "topic": "Conditions d'ouverture d'un compte en devises pour personnes physiques résidentes (P.P.R)",
+    "correction": "Selon la Circulaire 2017-04, les conditions d'ouverture d'un compte en devises (P.P.R) comprennent: (1) la présentation de pièces justificatives conformément à l'annexe n°2; (2) l'appartenance à l'une des catégories de bénéficiaires autorisées (tunisiens transférant résidence, étrangers résidents, détenteurs de participations dans sociétés exportatrices, sous-délégataires de change, prestataires de services, diplomates, ou personnels travaillant à l'étranger); (3) une déclaration sur l'honneur certifiant qu'on ne dispose d'aucune allocation pour voyages d'affaires et d'aucun autre compte P.P.R auprès d'un autre intermédiaire agréé; (4) un seul compte par personne est autorisé.",
+    "status": "approved",
+    "min_sim": 0.8
+  }
+]

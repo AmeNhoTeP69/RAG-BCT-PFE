@@ -124,6 +124,13 @@ def init_db() -> None:
         CREATE INDEX IF NOT EXISTS idx_corr_status ON corrections(status);
         """
     )
+    # Migration: per-correction minimum match similarity. A "narrow" correction
+    # (e.g. a specific account-type rule) can require a tighter cosine than the
+    # global threshold so it only fires for its true subject, not near-neighbours.
+    try:
+        conn.execute("ALTER TABLE corrections ADD COLUMN min_sim REAL")
+    except Exception:
+        pass  # column already exists
     conn.commit()
     conn.close()
 
@@ -416,14 +423,14 @@ def add_query_log(user_id: int | None, bank_name: str | None, conversation_id: i
 # ── Verified corrections (admin-gated cross-session learning) ─────────────────
 def add_correction(topic: str, correction: str, embedding: bytes | None,
                    status: str = "pending", source_conversation_id: int | None = None,
-                   created_by: int | None = None) -> int:
+                   created_by: int | None = None, min_sim: float | None = None) -> int:
     conn = get_db()
     try:
         cur = conn.execute(
             """INSERT INTO corrections
-                 (topic, correction, embedding, status, source_conversation_id, created_by, created_at)
-               VALUES (?, ?, ?, ?, ?, ?, ?)""",
-            (topic, correction, embedding, status, source_conversation_id, created_by, utcnow()),
+                 (topic, correction, embedding, status, source_conversation_id, created_by, created_at, min_sim)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+            (topic, correction, embedding, status, source_conversation_id, created_by, utcnow(), min_sim),
         )
         conn.commit()
         return cur.lastrowid
@@ -455,7 +462,7 @@ def get_approved_corrections() -> list[sqlite3.Row]:
     conn = get_db()
     try:
         return conn.execute(
-            "SELECT id, topic, correction, embedding FROM corrections WHERE status = 'approved'"
+            "SELECT id, topic, correction, embedding, min_sim FROM corrections WHERE status = 'approved'"
         ).fetchall()
     finally:
         conn.close()

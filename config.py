@@ -83,12 +83,12 @@ GEMMA_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 GEMMA_API_KEY = os.getenv("GROQ_API_KEY", "")
 
 # Vector Search configs
-TOP_K_CHUNKS = 4           # Keep context tight to stay within Groq free-tier TPM budget
+TOP_K_CHUNKS = 6           # Retrieve more candidates for recall; chunks are truncated to fit the TPM budget
 MIN_RETRIEVAL_SCORE = 0.60 # Discard chunks with cosine similarity below this threshold
 # Truncate each context chunk so a request stays under Groq free-tier TPM (6000/min
 # for qwen3-32b). ~1400 chars × up to 5 chunks ≈ 1.8k tokens of context, leaving
 # room for the prompt + max_tokens output reservation.
-MAX_CONTEXT_CHUNK_CHARS = 1400
+MAX_CONTEXT_CHUNK_CHARS = 1200
 
 # LLM Config (Using Groq Cloud for high-performance RAG)
 LLM_PROVIDER = "openai"  # "ollama", "openai", or "mock"
