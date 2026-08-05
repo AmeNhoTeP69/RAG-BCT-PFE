@@ -14,8 +14,8 @@ ChartJS.register(
 
 const GOLD = '#D4AF37'
 const BLUE = '#4f8ef7'
-const TEXT = '#b0b4c8'
-const GRID = 'rgba(255,255,255,0.06)'
+const TEXT = '#6b7280'                  /* mid-grey: readable on both light & dark */
+const GRID = 'rgba(130,130,150,0.18)'   /* grid visible on white and dark backgrounds */
 const TOPIC_COLORS = ['#D4AF37', '#4f8ef7', '#e0bd5a', '#6ba1f9', '#b8962e', '#3b6fd4', '#f0d27e', '#8bb6fb']
 
 const shortDate = (iso) => `${iso.slice(8, 10)}/${iso.slice(5, 7)}`

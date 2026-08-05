@@ -58,9 +58,9 @@
   --blue-graph:     #2563eb;
   --blue-graph-soft:rgba(37, 99, 235, 0.08);
 
-  --text-primary:   #1a1d23;
-  --text-secondary: #4b5563;
-  --text-muted:     #9ca3af;
+  --text-primary:   #14171d;
+  --text-secondary: #374151;
+  --text-muted:     #4b5563;
   --text-accent:    #b8860b;
 
   --shadow-glass:   0 8px 32px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(255,255,255,1) inset;
@@ -893,7 +893,8 @@ html, body, #root {
 .msg-avatar svg { color: #fff; }
 
 .msg-bubble {
-  max-width: 68%;
+  /* No own max-width: the wrapper (Message.jsx) caps at 68% and align-items:stretch
+     fills the bubble to it, so the bubble sits flush next to the avatar — no gap. */
   padding: 14px 18px;
   border-radius: var(--radius-md);
   font-size: 14px;

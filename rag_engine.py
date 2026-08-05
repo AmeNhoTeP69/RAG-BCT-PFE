@@ -323,6 +323,26 @@ RÉPONSE :"""
             log.warning("No internet connection detected. Falling back to Local Ollama...")
             answer = self._call_ollama(prompt)
 
+        # A refusal ("off-topic") or a clear decline ("not in the documents") must not
+        # display citations — the model did not actually use any source. We look only at
+        # the answer's opening, so a real answer that mentions "not available" later keeps
+        # its sources.
+        head = (answer or "").strip()[:160].lower()
+        is_refusal = bool(re.search(
+            r"je ne réponds qu|i can only answer questions about|"
+            r"only answer questions about|i can only respond to", head))
+        is_decline = bool(re.search(
+            r"n'(est|a) pas (été )?(abordée?|traitée?|disponible|mentionnée?|précisée?|trouvée?)|"
+            r"ne (traite|traitent|aborde|abordent|figure|figurent|mentionne|contiennent) pas|"
+            r"aucune information|aucun document|non disponible|n'ai pas accès|ne dispose pas|"
+            r"je ne sais pas|not (available|present|found|in the (provided )?(context|documents))|"
+            r"do(es)? not (contain|specifically (address|mention)|cover|provide)|"
+            r"don'?t have (access|specific information|the information|information)|"
+            r"no (specific )?information (about|on)|i don'?t know|"
+            r"لا أجيب إلا|لا توجد معلومات|غير متوفر|لم يتم التطرق", head))
+        if is_refusal or is_decline:
+            sources = []
+
         return {
             "answer": answer,
             "sources": list(set(sources)), # Unique source names

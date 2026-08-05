@@ -179,3 +179,25 @@ eval_*.log
 node_modules/
 dist/
 .DS_Store
+
+# Claude / AI agent config files
+.claude/
+
+# Internal dev / supervisor notes (not for public repo)
+report_notes/
+supervisor_notes_response.md
+academic_summary.md
+workflow_demo_guide.md
+
+# Runtime experiment artifacts
+delta_ids.txt
+test_fix.json
+experiment_topk6.json
+
+# Large log files (catch any not already covered)
+*.log
+server.log
+server_err.log
+server_out.log
+on_run.log
+delta_run.log
